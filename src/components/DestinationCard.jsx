@@ -1,10 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useFavorites } from '../hooks/useFavorites';
 
 export function DestinationCard({ destination }) {
+  const navigate = useNavigate();
   const { isDestinationFavorite, toggleDestinationFavorite } = useFavorites();
   const isFav = isDestinationFavorite(destination.id);
+
+  const handleCardClick = (e) => {
+    // 點擊收藏愛心按鈕時不觸發跳轉
+    if (e.target.closest('.fav-btn')) return;
+    navigate(`/destination/${destination.id}`);
+  };
 
   const handleFavoriteClick = (e) => {
     e.preventDefault();
@@ -15,7 +22,11 @@ export function DestinationCard({ destination }) {
   const imageSrc = destination.coverImageUrl || destination.coverImage;
 
   return (
-    <article className="destination-card">
+    <article
+      className="destination-card"
+      onClick={handleCardClick}
+      title={`點擊查看 ${destination.name} 完整旅遊指南`}
+    >
       {/* 封面圖片與右上角收藏按鈕 */}
       <div className="card-image-box">
         <img
@@ -78,13 +89,13 @@ export function DestinationCard({ destination }) {
             🏛️ {destination.attractionIds ? destination.attractionIds.length : 0} 景點 • 🍜 {destination.foodIds ? destination.foodIds.length : 0} 美食
           </span>
 
-          <Link to={`/destination/${destination.id}`} className="btn btn-outline btn-sm">
+          <span className="btn btn-outline btn-sm">
             深入探索
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
-          </Link>
+          </span>
         </div>
       </div>
     </article>

@@ -396,11 +396,18 @@
   flex-direction: column;
   transition: all var(--transition-base);
   position: relative;
+  cursor: pointer;
 }
 
 .destination-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
+  border-color: var(--color-primary);
+}
+
+.destination-card:hover .btn-outline {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
   border-color: var(--color-primary);
 }
 

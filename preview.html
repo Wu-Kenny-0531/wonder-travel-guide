@@ -1479,14 +1479,23 @@
 
     function DestinationCard({ destination, isFav, onToggleFav }) {
       const img = destination.coverImageUrl || destination.coverImage;
+      const handleCardClick = (e) => {
+        // 點擊收藏愛心時不觸發跳轉
+        if (e.target.closest('.fav-btn')) return;
+        window.location.hash = '#/destination/' + destination.id;
+      };
       return (
-        <article className="destination-card">
+        <article
+          className="destination-card"
+          onClick={handleCardClick}
+          title={"點擊查看 " + destination.name + " 完整旅遊指南"}
+        >
           <div className="card-image-box">
             <img referrerPolicy="no-referrer" src={img} alt={destination.name} loading="lazy" />
             <span className="card-badge-country">📍 {destination.country} • {destination.countryCode}</span>
             <button
               className={"fav-btn " + (isFav ? 'is-active' : '')}
-              onClick={(e) => { e.preventDefault(); onToggleFav(destination.id); }}
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); onToggleFav(destination.id); }}
               title={isFav ? "取消收藏" : "加入收藏"}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill={isFav ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -1509,9 +1518,9 @@
               <span className="card-stats-text">
                 🏛️ {destination.attractionIds ? destination.attractionIds.length : 0} 景點 • 🍜 {destination.foodIds ? destination.foodIds.length : 0} 美食
               </span>
-              <a href={"#/destination/" + destination.id} className="btn btn-outline btn-sm">
+              <span className="btn btn-outline btn-sm">
                 深入探索 ➜
-              </a>
+              </span>
             </div>
           </div>
         </article>
