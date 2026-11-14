@@ -312,6 +312,36 @@ export const attractions = [
     imageUrl: "https://images.unsplash.com/photo-1555109307-f7d9da25c244?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-newyork-empirestate"],
     sourceIds: ["source-nyc-tourism"]
+  },
+  {
+    id: "newyork-met-museum",
+    destinationId: "new-york",
+    name: "大都會藝術博物館",
+    englishName: "The Metropolitan Museum of Art (The Met)",
+    category: "文化歷史",
+    description: "名列世界四大頂尖藝術博物館之一，座落於第五大道「博物館大道」核心。典藏超過兩百萬件橫跨五千年人類歷史文明的瑰寶，從古埃及丹鐸神廟（Temple of Dendur）、古希臘羅馬大理石雕塑，到歐洲古典油畫大師梵谷、莫內、維梅爾真跡與美國翼展廳，為全球藝術朝聖殿堂。",
+    highlights: ["整座遷建室內展示的古埃及「丹鐸神廟」", "梵谷《麥田裡的絲柏樹》與莫內印象派大師真跡", "歐洲雕塑庭園與大都會屋頂花園俯瞰中央公園"],
+    openingHours: "週日至週二、週四 10:00 - 17:00；週五至週六 10:00 - 21:00 (週三休館)",
+    address: "1000 5th Ave, New York, NY 10028",
+    image: "./images/attractions/newyork-met-museum.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-newyork-met"],
+    sourceIds: ["source-nyc-tourism", "source-met-museum"]
+  },
+  {
+    id: "newyork-brooklyn-bridge",
+    destinationId: "new-york",
+    name: "布魯克林大橋漫步步道",
+    englishName: "Brooklyn Bridge Pedestrian Promenade",
+    category: "城市地標",
+    description: "建於1883年的國家歷史地標，是世界首座鋼索懸索橋與紐約最浪漫的工程奇蹟。高聳的新哥德式石灰石雙拱塔樓與放射狀鋼纜交織出經典天際輪廓。漫步於架高的木棧人行道上，橫跨東河（East River），向西可遠眺下曼哈頓金融區摩天大樓群與自由女神像，是欣賞日落與璀璨夜景的朝聖勝地。",
+    highlights: ["百年新哥德式雙拱門歷史建築與放射狀鋼纜", "架高行人專屬木棧道橫跨東河悠閒漫步", "連接曼哈頓與DUMBO藝術區、遠眺落日天際線最佳視角"],
+    openingHours: "全天24小時開放自由通行 (清晨靜謐、日落與夜間夜景最為迷人)",
+    address: "Brooklyn Bridge, New York, NY 10038",
+    image: "./images/attractions/newyork-brooklyn-bridge.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1505533321630-975218a5f66f?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-newyork-brooklyn"],
+    sourceIds: ["source-nyc-tourism"]
   }
 ];
 

@@ -436,6 +436,54 @@ export const imageCredits = [
     license: "Unsplash License",
     usagePermission: "verified",
     alt: "外脆內軟的手作紐約貝果搭配濃郁奶油乳酪"
+  },
+  {
+    id: "credit-attr-newyork-met",
+    file: "./images/attractions/newyork-met-museum.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=900&q=80",
+    title: "大都會藝術博物館宏偉古典立面與階梯",
+    author: "Sofia De la Torre",
+    sourceUrl: "https://unsplash.com/photos/1582555172866",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "大都會藝術博物館古典宏偉外觀與入口前寬闊石階"
+  },
+  {
+    id: "credit-attr-newyork-brooklyn",
+    file: "./images/attractions/newyork-brooklyn-bridge.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1505533321630-975218a5f66f?auto=format&fit=crop&w=900&q=80",
+    title: "布魯克林大橋百年哥德式雙塔與懸索步道",
+    author: "Alexander Rotker",
+    sourceUrl: "https://unsplash.com/photos/1505533321630",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "布魯克林大橋經典哥德式拱門與鋼纜交錯的行人木棧道"
+  },
+  {
+    id: "credit-food-newyork-pastrami",
+    file: "./images/food/newyork-pastrami.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80",
+    title: "卡茲熟食風格層層堆疊現切煙燻牛肉三明治",
+    author: "Mae Mu",
+    sourceUrl: "https://unsplash.com/photos/1528735602780",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "層層滿溢的粉嫩現切厚汁煙燻牛肉夾入黑麥麵包佐黃芥末"
+  },
+  {
+    id: "credit-food-newyork-cheesecake",
+    file: "./images/food/newyork-cheesecake.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=80",
+    title: "經典濃郁絲滑烤金黃紐約重乳酪蛋糕",
+    author: "Aliona Gumeniuk",
+    sourceUrl: "https://unsplash.com/photos/1533134242443",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "表面烘烤至金黃微焦、口感紮實濃厚的經典紐約重乳酪蛋糕"
   }
 ];
 

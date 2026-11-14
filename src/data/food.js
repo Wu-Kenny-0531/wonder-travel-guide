@@ -152,6 +152,34 @@ export const food = [
     imageUrl: "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-food-newyork-bagel"],
     sourceIds: ["source-nyc-tourism"]
+  },
+  {
+    id: "newyork-pastrami",
+    destinationId: "new-york",
+    name: "卡茲熟食經典熱切煙燻牛肉黑麥三明治",
+    englishName: "Katz's Style Pastrami on Rye Sandwich",
+    category: "在地料理",
+    description: "自1888年流傳至今的下東城猶太熟食傳奇。將牛胸肉（Brisket）以秘密香料鹽水醃漬數週後煙燻慢火清蒸，師傅在吧台前現切層層堆疊達數公分厚的粉嫩多汁牛肉，抹上香辛黃芥末夾入黑麥麵包，咬下肉汁四溢、鹹香濃郁無比。",
+    recommendedSpots: "Katz's Delicatessen（下東城百年老店）、2nd Ave Deli、Pastrami Queen",
+    priceRange: "US$ 26.00 - US$ 32.00",
+    image: "./images/food/newyork-pastrami.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-food-newyork-pastrami"],
+    sourceIds: ["source-nyc-tourism"]
+  },
+  {
+    id: "newyork-cheesecake",
+    destinationId: "new-york",
+    name: "經典紐約烤重乳酪蛋糕",
+    englishName: "Authentic New York-style Cheesecake",
+    category: "甜點",
+    description: "享譽全球的甜點經典代表作。不同於輕乳酪或生乳酪蛋糕，正統紐約重乳酪以超高比例費城奶油乳酪、酸奶、雞蛋與香草慢火烘烤，口感濃郁厚實如絲絨般滑順，底部搭配香脆微鹹的葛拉漢全麥餅乾碎，濃醇滋味令人魂牽夢縈。",
+    recommendedSpots: "Junior's Restaurant & Bakery（時代廣場與布魯克林）、Eileen's Special Cheesecake",
+    priceRange: "US$ 9.00 - US$ 14.00 / 片",
+    image: "./images/food/newyork-cheesecake.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-food-newyork-cheesecake"],
+    sourceIds: ["source-nyc-tourism"]
   }
 ];
 

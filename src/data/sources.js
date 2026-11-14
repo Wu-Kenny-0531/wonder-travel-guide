@@ -140,6 +140,14 @@ export const sources = [
     type: "景點官方網站",
     accessedAt: "2026-11-14",
     notes: "中央公園綿延步道地圖、綿羊草原開放季節與各季特色導覽指南。"
+  },
+  {
+    id: "source-met-museum",
+    name: "大都會藝術博物館官方網站 (The Metropolitan Museum of Art - The Met)",
+    url: "https://www.metmuseum.org/",
+    type: "景點官方網站",
+    accessedAt: "2026-11-14",
+    notes: "五千年人類藝術珍品館藏、特展時間表、導覽地圖與入館購票規範。"
   }
 ];
 

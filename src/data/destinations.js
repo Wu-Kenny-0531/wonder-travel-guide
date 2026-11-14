@@ -301,16 +301,21 @@ export const destinations = [
       "newyork-statue-of-liberty",
       "newyork-times-square",
       "newyork-central-park",
-      "newyork-empire-state"
+      "newyork-empire-state",
+      "newyork-met-museum",
+      "newyork-brooklyn-bridge"
     ],
     foodIds: [
       "newyork-pizza",
-      "newyork-bagel"
+      "newyork-bagel",
+      "newyork-pastrami",
+      "newyork-cheesecake"
     ],
     sourceIds: [
       "source-nyc-tourism",
       "source-nps-statue",
-      "source-centralpark-nyc"
+      "source-centralpark-nyc",
+      "source-met-museum"
     ]
   }
 ];

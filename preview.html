@@ -350,16 +350,21 @@
       "newyork-statue-of-liberty",
       "newyork-times-square",
       "newyork-central-park",
-      "newyork-empire-state"
+      "newyork-empire-state",
+      "newyork-met-museum",
+      "newyork-brooklyn-bridge"
     ],
     "foodIds": [
       "newyork-pizza",
-      "newyork-bagel"
+      "newyork-bagel",
+      "newyork-pastrami",
+      "newyork-cheesecake"
     ],
     "sourceIds": [
       "source-nyc-tourism",
       "source-nps-statue",
-      "source-centralpark-nyc"
+      "source-centralpark-nyc",
+      "source-met-museum"
     ]
   }
 ];
@@ -839,6 +844,53 @@
     "sourceIds": [
       "source-nyc-tourism"
     ]
+  },
+  {
+    "id": "newyork-met-museum",
+    "destinationId": "new-york",
+    "name": "大都會藝術博物館",
+    "englishName": "The Metropolitan Museum of Art (The Met)",
+    "category": "文化歷史",
+    "description": "名列世界四大頂尖藝術博物館之一，座落於第五大道「博物館大道」核心。典藏超過兩百萬件橫跨五千年人類歷史文明的瑰寶，從古埃及丹鐸神廟（Temple of Dendur）、古希臘羅馬大理石雕塑，到歐洲古典油畫大師梵谷、莫內、維梅爾真跡與美國翼展廳，為全球藝術朝聖殿堂。",
+    "highlights": [
+      "整座遷建室內展示的古埃及「丹鐸神廟」",
+      "梵谷《麥田裡的絲柏樹》與莫內印象派大師真跡",
+      "歐洲雕塑庭園與大都會屋頂花園俯瞰中央公園"
+    ],
+    "openingHours": "週日至週二、週四 10:00 - 17:00；週五至週六 10:00 - 21:00 (週三休館)",
+    "address": "1000 5th Ave, New York, NY 10028",
+    "image": "./images/attractions/newyork-met-museum.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-newyork-met"
+    ],
+    "sourceIds": [
+      "source-nyc-tourism",
+      "source-met-museum"
+    ]
+  },
+  {
+    "id": "newyork-brooklyn-bridge",
+    "destinationId": "new-york",
+    "name": "布魯克林大橋漫步步道",
+    "englishName": "Brooklyn Bridge Pedestrian Promenade",
+    "category": "城市地標",
+    "description": "建於1883年的國家歷史地標，是世界首座鋼索懸索橋與紐約最浪漫的工程奇蹟。高聳的新哥德式石灰石雙拱塔樓與放射狀鋼纜交織出經典天際輪廓。漫步於架高的木棧人行道上，橫跨東河（East River），向西可遠眺下曼哈頓金融區摩天大樓群與自由女神像，是欣賞日落與璀璨夜景的朝聖勝地。",
+    "highlights": [
+      "百年新哥德式雙拱門歷史建築與放射狀鋼纜",
+      "架高行人專屬木棧道橫跨東河悠閒漫步",
+      "連接曼哈頓與DUMBO藝術區、遠眺落日天際線最佳視角"
+    ],
+    "openingHours": "全天24小時開放自由通行 (清晨靜謐、日落與夜間夜景最為迷人)",
+    "address": "Brooklyn Bridge, New York, NY 10038",
+    "image": "./images/attractions/newyork-brooklyn-bridge.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1505533321630-975218a5f66f?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-newyork-brooklyn"
+    ],
+    "sourceIds": [
+      "source-nyc-tourism"
+    ]
   }
 ];
     const food = [
@@ -1023,6 +1075,42 @@
     "sourceIds": [
       "source-nyc-tourism"
     ]
+  },
+  {
+    "id": "newyork-pastrami",
+    "destinationId": "new-york",
+    "name": "卡茲熟食經典熱切煙燻牛肉黑麥三明治",
+    "englishName": "Katz's Style Pastrami on Rye Sandwich",
+    "category": "在地料理",
+    "description": "自1888年流傳至今的下東城猶太熟食傳奇。將牛胸肉（Brisket）以秘密香料鹽水醃漬數週後煙燻慢火清蒸，師傅在吧台前現切層層堆疊達數公分厚的粉嫩多汁牛肉，抹上香辛黃芥末夾入黑麥麵包，咬下肉汁四溢、鹹香濃郁無比。",
+    "recommendedSpots": "Katz's Delicatessen（下東城百年老店）、2nd Ave Deli、Pastrami Queen",
+    "priceRange": "US$ 26.00 - US$ 32.00",
+    "image": "./images/food/newyork-pastrami.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-food-newyork-pastrami"
+    ],
+    "sourceIds": [
+      "source-nyc-tourism"
+    ]
+  },
+  {
+    "id": "newyork-cheesecake",
+    "destinationId": "new-york",
+    "name": "經典紐約烤重乳酪蛋糕",
+    "englishName": "Authentic New York-style Cheesecake",
+    "category": "甜點",
+    "description": "享譽全球的甜點經典代表作。不同於輕乳酪或生乳酪蛋糕，正統紐約重乳酪以超高比例費城奶油乳酪、酸奶、雞蛋與香草慢火烘烤，口感濃郁厚實如絲絨般滑順，底部搭配香脆微鹹的葛拉漢全麥餅乾碎，濃醇滋味令人魂牽夢縈。",
+    "recommendedSpots": "Junior's Restaurant & Bakery（時代廣場與布魯克林）、Eileen's Special Cheesecake",
+    "priceRange": "US$ 9.00 - US$ 14.00 / 片",
+    "image": "./images/food/newyork-cheesecake.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-food-newyork-cheesecake"
+    ],
+    "sourceIds": [
+      "source-nyc-tourism"
+    ]
   }
 ];
     const sources = [
@@ -1153,6 +1241,14 @@
     "type": "景點官方網站",
     "accessedAt": "2026-11-14",
     "notes": "中央公園綿延步道地圖、綿羊草原開放季節與各季特色導覽指南。"
+  },
+  {
+    "id": "source-met-museum",
+    "name": "大都會藝術博物館官方網站 (The Metropolitan Museum of Art - The Met)",
+    "url": "https://www.metmuseum.org/",
+    "type": "景點官方網站",
+    "accessedAt": "2026-11-14",
+    "notes": "五千年人類藝術珍品館藏、特展時間表、導覽地圖與入館購票規範。"
   }
 ];
     const imageCredits = [
@@ -1575,6 +1671,54 @@
     "license": "Unsplash License",
     "usagePermission": "verified",
     "alt": "外脆內軟的手作紐約貝果搭配濃郁奶油乳酪"
+  },
+  {
+    "id": "credit-attr-newyork-met",
+    "file": "./images/attractions/newyork-met-museum.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=900&q=80",
+    "title": "大都會藝術博物館宏偉古典立面與階梯",
+    "author": "Sofia De la Torre",
+    "sourceUrl": "https://unsplash.com/photos/1582555172866",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "大都會藝術博物館古典宏偉外觀與入口前寬闊石階"
+  },
+  {
+    "id": "credit-attr-newyork-brooklyn",
+    "file": "./images/attractions/newyork-brooklyn-bridge.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1505533321630-975218a5f66f?auto=format&fit=crop&w=900&q=80",
+    "title": "布魯克林大橋百年哥德式雙塔與懸索步道",
+    "author": "Alexander Rotker",
+    "sourceUrl": "https://unsplash.com/photos/1505533321630",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "布魯克林大橋經典哥德式拱門與鋼纜交錯的行人木棧道"
+  },
+  {
+    "id": "credit-food-newyork-pastrami",
+    "file": "./images/food/newyork-pastrami.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80",
+    "title": "卡茲熟食風格層層堆疊現切煙燻牛肉三明治",
+    "author": "Mae Mu",
+    "sourceUrl": "https://unsplash.com/photos/1528735602780",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "層層滿溢的粉嫩現切厚汁煙燻牛肉夾入黑麥麵包佐黃芥末"
+  },
+  {
+    "id": "credit-food-newyork-cheesecake",
+    "file": "./images/food/newyork-cheesecake.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=80",
+    "title": "經典濃郁絲滑烤金黃紐約重乳酪蛋糕",
+    "author": "Aliona Gumeniuk",
+    "sourceUrl": "https://unsplash.com/photos/1533134242443",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "表面烘烤至金黃微焦、口感紮實濃厚的經典紐約重乳酪蛋糕"
   }
 ];
 
