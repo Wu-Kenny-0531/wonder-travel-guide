@@ -65,7 +65,7 @@ export const food = [
     "recommendedSpots": "鼎泰豐信義本店、盛園絲瓜小籠湯包、杭州小籠湯包",
     "priceRange": "NT$ 150 - NT$ 320",
     "image": "./images/food/taipei-xiaolongbao.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1523905330026-b8bd1f5f320e?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-taipei-xiaolongbao"
     ],
@@ -245,7 +245,7 @@ export const food = [
     "recommendedSpots": "本家西尾八ッ橋、聖護院八ッ橋總本店、井筒八ッ橋本舖",
     "priceRange": "¥600 - ¥1,200",
     "image": "./images/food/kyoto-yatsuhashi.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-kyoto-yatsuhashi"
     ],
@@ -281,7 +281,7 @@ export const food = [
     "recommendedSpots": "思慕昔永康街旗艦店、冰讚（雙連站）、芒果皇帝",
     "priceRange": "NT$ 180 - NT$ 260",
     "image": "./images/food/taipei-mangoice.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1748831876085-03664b683cfd?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-taipei-mangoice"
     ],

@@ -86,7 +86,7 @@ export const attractions = [
     "openingHours": "全天開放自由參觀 (建議清晨造訪體驗靜謐氛圍)",
     "address": "京都市右京區嵯峨小倉山田淵山町",
     "image": "./images/attractions/kyoto-arashiyama.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1527974361724-67fd5ebfd6d2?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-attr-kyoto-arashiyama"
     ],
@@ -607,7 +607,7 @@ export const attractions = [
     "openingHours": "每日 06:00 - 21:45 全年開放",
     "address": "台北市萬華區廣州街211號",
     "image": "./images/attractions/taipei-longshan.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1543731068-7e0f5beff43a?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1656829443080-799b80331189?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-attr-taipei-longshan"
     ],

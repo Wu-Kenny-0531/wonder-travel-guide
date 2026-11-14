@@ -74,14 +74,14 @@ export const imageCredits = [
   {
     "id": "credit-attr-kyoto-arashiyama",
     "file": "./images/attractions/kyoto-arashiyama.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1527974361724-67fd5ebfd6d2?auto=format&fit=crop&w=900&q=80",
     "title": "嵐山嵯峨野竹林小徑",
-    "author": "Bantersnaps",
-    "sourceUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=900&q=80",
+    "author": "Jeremy Goldberg",
+    "sourceUrl": "https://images.unsplash.com/photo-1527974361724-67fd5ebfd6d2?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "高聳青翠竹林幽靜小路"
+    "alt": "京都嵐山高聳青翠竹林幽靜步道"
   },
   {
     "id": "credit-attr-taipei-101",
@@ -218,10 +218,10 @@ export const imageCredits = [
   {
     "id": "credit-food-taipei-xiaolongbao",
     "file": "./images/food/taipei-xiaolongbao.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1523905330026-b8bd1f5f320e?auto=format&fit=crop&w=900&q=80",
     "title": "熱氣蒸騰的鼎泰豐風格現蒸小籠包",
-    "author": "Charles Deluvio",
-    "sourceUrl": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=900&q=80",
+    "author": "Pooja Chaudhary",
+    "sourceUrl": "https://images.unsplash.com/photo-1523905330026-b8bd1f5f320e?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
@@ -506,14 +506,14 @@ export const imageCredits = [
   {
     "id": "credit-food-kyoto-yatsuhashi",
     "file": "./images/food/kyoto-yatsuhashi.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=900&q=80",
     "title": "京都老街手工生八橋與四季日式和菓子",
-    "author": "Jennifer Schmidt",
-    "sourceUrl": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80",
+    "author": "Unsplash Contributor",
+    "sourceUrl": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "肉桂香氣肉軟Q米皮包裹紅豆餡的傳統生八橋"
+    "alt": "精緻日式和菓子與四季傳統點心"
   },
   {
     "id": "credit-attr-taipei-dadaocheng",
@@ -530,10 +530,10 @@ export const imageCredits = [
   {
     "id": "credit-attr-taipei-longshan",
     "file": "./images/attractions/taipei-longshan.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1543731068-7e0f5beff43a?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1656829443080-799b80331189?auto=format&fit=crop&w=900&q=80",
     "title": "艋舺龍山寺歇山重簷燕尾與虔誠香火",
-    "author": "Lisanto 李奕良",
-    "sourceUrl": "https://images.unsplash.com/photo-1543731068-7e0f5beff43a?auto=format&fit=crop&w=900&q=80",
+    "author": "Poh Soo Donald Soh",
+    "sourceUrl": "https://images.unsplash.com/photo-1656829443080-799b80331189?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
@@ -554,10 +554,10 @@ export const imageCredits = [
   {
     "id": "credit-food-taipei-mangoice",
     "file": "./images/food/taipei-mangoice.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1748831876085-03664b683cfd?auto=format&fit=crop&w=900&q=80",
     "title": "永康街手作鮮切愛文芒果雪花冰",
-    "author": "Food Photographer",
-    "sourceUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+    "author": "Lee Milo",
+    "sourceUrl": "https://images.unsplash.com/photo-1748831876085-03664b683cfd?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
