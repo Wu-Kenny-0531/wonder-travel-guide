@@ -362,7 +362,7 @@
     "openingHours": "週二至週日 09:00 - 17:00 (週一休館)",
     "address": "台北市士林區至善路二段221號",
     "image": "./images/attractions/taipei-palace.jpg",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/NationalPalace_MuseumFrontView.jpg/900px-NationalPalace_MuseumFrontView.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1762529484143-9430545abda6?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-attr-taipei-palace"
     ],
@@ -434,7 +434,7 @@
     "openingHours": "08:30 - 15:30 (每日售票開放，服裝須端莊長褲長裙遮袖)",
     "address": "Na Phra Lan Rd, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok",
     "image": "./images/attractions/bangkok-palace.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1563492065599-3580f777d662?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1712141481069-793132cc5769?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-attr-bangkok-palace"
     ],
@@ -810,12 +810,12 @@
   {
     "id": "credit-attr-taipei-palace",
     "file": "./images/attractions/taipei-palace.jpg",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/NationalPalace_MuseumFrontView.jpg/900px-NationalPalace_MuseumFrontView.jpg",
-    "title": "國立故宮博物院巍峨宮殿主樓正視景觀",
-    "author": "Bernard Gagnon (Wikimedia Commons)",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:NationalPalace_MuseumFrontView.jpg",
-    "sourceType": "維基共享資源 (Wikimedia Commons)",
-    "license": "Creative Commons Attribution-Share Alike 3.0 / 4.0",
+    "imageUrl": "https://images.unsplash.com/photo-1762529484143-9430545abda6?auto=format&fit=crop&w=900&q=80",
+    "title": "國立故宮博物院外雙溪綠意與傳統宮殿建築",
+    "author": "Maxim Klimashin",
+    "sourceUrl": "https://unsplash.com/photos/1762529484143",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
     "usagePermission": "verified",
     "alt": "台北外雙溪國立故宮博物院傳統宮殿主樓全景"
   },
@@ -846,10 +846,10 @@
   {
     "id": "credit-attr-bangkok-palace",
     "file": "./images/attractions/bangkok-palace.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1563492065599-3580f777d662?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1712141481069-793132cc5769?auto=format&fit=crop&w=900&q=80",
     "title": "曼谷大皇宮金色佛塔與玉佛寺建築",
-    "author": "Andreas M",
-    "sourceUrl": "https://unsplash.com/photos/1563492065599",
+    "author": "Unsplash Contributor",
+    "sourceUrl": "https://unsplash.com/photos/1712141481069",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
@@ -1177,7 +1177,7 @@
       return (
         <article className="destination-card">
           <div className="card-image-box">
-            <img src={img} alt={destination.name} loading="lazy" />
+            <img referrerPolicy="no-referrer" src={img} alt={destination.name} loading="lazy" />
             <span className="card-badge-country">📍 {destination.country} • {destination.countryCode}</span>
             <button
               className={"fav-btn " + (isFav ? 'is-active' : '')}
@@ -1218,7 +1218,7 @@
       return (
         <article className="attraction-card">
           <div className="attraction-image-box">
-            <img src={img} alt={attraction.name} loading="lazy" />
+            <img referrerPolicy="no-referrer" src={img} alt={attraction.name} loading="lazy" />
             <span className="attraction-category">{attraction.category}</span>
             <button
               className={"fav-btn " + (isFav ? 'is-active' : '')}
@@ -1261,7 +1261,7 @@
       return (
         <article className="food-card">
           <div className="food-image-box">
-            <img src={img} alt={foodItem.name} loading="lazy" />
+            <img referrerPolicy="no-referrer" src={img} alt={foodItem.name} loading="lazy" />
             {foodItem.priceRange && <span className="food-price-badge">💰 {foodItem.priceRange}</span>}
           </div>
           <div className="food-body">
@@ -1319,7 +1319,7 @@
                 </div>
                 <div className="hero-visual">
                   <div className="hero-card-stack">
-                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=80" alt="京都八坂塔" />
+                    <img referrerPolicy="no-referrer" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=80" alt="京都八坂塔" />
                     <div className="hero-card-overlay">
                       <span className="badge badge-secondary" style={{ marginBottom: '8px' }}>本季推薦 • 日本京都</span>
                       <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem' }}>穿梭於千本鳥居與嵐山竹林的東洋詩篇</h3>
@@ -1545,7 +1545,7 @@
       return (
         <div>
           <section className="detail-hero">
-            <img src={dest.coverImageUrl || dest.coverImage} alt={dest.name} className="detail-hero-bg" />
+            <img referrerPolicy="no-referrer" src={dest.coverImageUrl || dest.coverImage} alt={dest.name} className="detail-hero-bg" />
             <div className="detail-hero-overlay" />
             <div className="container detail-hero-content">
               <a href="#/explore" className="detail-back-link">← 返回城市列表</a>
@@ -1790,7 +1790,7 @@
                 <tbody>
                   {imageCredits.map(c => (
                     <tr key={c.id}>
-                      <td><img src={c.imageUrl || c.file} alt={c.title} className="credit-thumb" /></td>
+                      <td><img referrerPolicy="no-referrer" src={c.imageUrl || c.file} alt={c.title} className="credit-thumb" /></td>
                       <td><strong>{c.title}</strong><div style={{ fontSize: '0.75rem', color: '#718096' }}>ID: {c.id}</div></td>
                       <td><span style={{ color: 'var(--color-primary)', fontWeight: 600 }}>{c.author}</span></td>
                       <td>{c.sourceType}</td>

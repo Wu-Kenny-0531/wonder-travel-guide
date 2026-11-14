@@ -93,7 +93,7 @@ export const attractions = [
     openingHours: "週二至週日 09:00 - 17:00 (週一休館)",
     address: "台北市士林區至善路二段221號",
     image: "./images/attractions/taipei-palace.jpg",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/NationalPalace_MuseumFrontView.jpg/900px-NationalPalace_MuseumFrontView.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1762529484143-9430545abda6?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-taipei-palace"],
     sourceIds: ["source-taipei-travel", "source-npm-taiwan"]
   },
@@ -140,7 +140,7 @@ export const attractions = [
     openingHours: "08:30 - 15:30 (每日售票開放，服裝須端莊長褲長裙遮袖)",
     address: "Na Phra Lan Rd, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok",
     image: "./images/attractions/bangkok-palace.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1563492065599-3580f777d662?auto=format&fit=crop&w=900&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1712141481069-793132cc5769?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-bangkok-palace"],
     sourceIds: ["source-tat-thailand", "source-bangkok-grand-palace"]
   },

@@ -164,6 +164,7 @@ export function SourcesCredits() {
                           alt={credit.alt || credit.title}
                           className="credit-thumb"
                           loading="lazy"
+                          referrerPolicy="no-referrer"
                         />
                       </td>
                       <td>
