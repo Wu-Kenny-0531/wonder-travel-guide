@@ -1,0 +1,1239 @@
+/* ==========================================================================
+   GoWonder Travel Guide - 元件樣式 (components.css)
+   活潑、明亮、繽紛旅遊雜誌風格，全響應式無水平溢位
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 導覽列 Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 248, 237, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #FF8A65 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(255, 112, 67, 0.3);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.brand-name span {
+  color: var(--color-primary);
+}
+
+.brand-tagline {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-teal);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 112, 67, 0.1);
+  color: var(--color-primary);
+}
+
+.nav-link.active {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.nav-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: var(--color-secondary);
+  color: #2D3748;
+}
+
+.nav-link.active .nav-badge {
+  background-color: #FFFFFF;
+  color: var(--color-primary);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--color-text-main);
+}
+
+/* --------------------------------------------------------------------------
+   2. 主視覺 Hero 區域
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0 80px;
+  background: radial-gradient(circle at 85% 20%, rgba(255, 209, 102, 0.35) 0%, transparent 40%),
+              radial-gradient(circle at 10% 80%, rgba(6, 182, 164, 0.15) 0%, transparent 35%),
+              linear-gradient(180deg, #FFF4E5 0%, #FFF8ED 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: var(--color-text-main);
+}
+
+.hero-title .highlight {
+  color: var(--color-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title .highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 209, 102, 0.45);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  color: var(--color-text-body);
+  line-height: 1.65;
+  margin-bottom: 30px;
+  max-width: 580px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(234, 219, 204, 0.8);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-card-stack {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 4px solid #FFFFFF;
+}
+
+.hero-card-stack img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.hero-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(20, 24, 33, 0.85) 0%, transparent 100%);
+  color: #FFFFFF;
+}
+
+.hero-floating-pill {
+  position: absolute;
+  bottom: -15px;
+  right: 20px;
+  background-color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+}
+
+/* --------------------------------------------------------------------------
+   3. 搜尋與篩選 SearchBar
+   -------------------------------------------------------------------------- */
+.search-filter-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: 36px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--color-primary);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 48px 0 52px;
+  font-size: 1.05rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  outline: none;
+  background-color: var(--color-bg);
+  transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+  border-color: var(--color-primary);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(255, 112, 67, 0.15);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  min-width: 60px;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-pill {
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filter-pill.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(255, 112, 67, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   4. 目的地卡片 DestinationCard
+   -------------------------------------------------------------------------- */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.destination-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-primary);
+}
+
+.card-image-box {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: #E2E8F0;
+}
+
+.card-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.destination-card:hover .card-image-box img {
+  transform: scale(1.05);
+}
+
+.card-badge-country {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-sm);
+}
+
+.fav-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.fav-btn:hover {
+  transform: scale(1.12);
+  color: var(--color-primary);
+}
+
+.fav-btn.is-active {
+  color: #E53E3E;
+  background-color: #FFFFFF;
+}
+
+.card-content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-header-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.card-header-title h3 {
+  font-size: 1.4rem;
+  color: var(--color-text-main);
+}
+
+.card-header-title .card-en-name {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.card-description {
+  font-size: 0.92rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.tag-pill {
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-stats-text {
+  font-size: 0.85rem;
+  color: var(--color-teal);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   5. 景點卡片 AttractionCard
+   -------------------------------------------------------------------------- */
+.attraction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.attraction-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.attraction-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-teal);
+}
+
+.attraction-image-box {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #E2E8F0;
+}
+
+.attraction-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.attraction-card:hover .attraction-image-box img {
+  transform: scale(1.04);
+}
+
+.attraction-category {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: var(--color-teal);
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.attraction-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.attraction-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.attraction-title h4 {
+  font-size: 1.25rem;
+  color: var(--color-text-main);
+}
+
+.attraction-title .en-sub {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.attraction-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.attraction-highlights {
+  list-style: none;
+  margin-bottom: 16px;
+  background-color: var(--color-bg);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.attraction-highlights li {
+  font-size: 0.82rem;
+  color: var(--color-text-body);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.attraction-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+.attraction-meta {
+  margin-top: auto;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-border);
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   6. 美食卡片 FoodCard
+   -------------------------------------------------------------------------- */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.food-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.food-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-secondary);
+}
+
+.food-image-box {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.food-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.food-price-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(35, 39, 47, 0.85);
+  color: var(--color-secondary);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.food-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.food-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.food-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.food-category {
+  background-color: var(--color-secondary-light);
+  color: #B28200;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.food-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-body);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.food-spots {
+  margin-top: auto;
+  font-size: 0.8rem;
+  background-color: var(--color-bg);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-body);
+  border-left: 3px solid var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   7. 目的地詳細頁 Destination Detail Layout
+   -------------------------------------------------------------------------- */
+.detail-hero {
+  position: relative;
+  min-height: 420px;
+  background-color: #23272F;
+  border-bottom: 4px solid var(--color-primary);
+  display: flex;
+  align-items: flex-end;
+}
+
+.detail-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+}
+
+.detail-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(20, 24, 33, 0.2) 0%, rgba(20, 24, 33, 0.9) 100%);
+}
+
+.detail-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px 0 40px;
+  color: #FFFFFF;
+}
+
+.detail-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(4px);
+}
+
+.detail-back-link:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 112, 67, 0.85);
+}
+
+.detail-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.detail-title-group h1 {
+  color: #FFFFFF;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.detail-title-group .en-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-secondary);
+  letter-spacing: 0.05em;
+}
+
+.detail-slogan {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 680px;
+  margin-top: 12px;
+}
+
+/* 詳情頁快速資訊列 */
+.detail-quick-stats {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 24px 30px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  margin-top: -30px;
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.quick-stat-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.quick-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.quick-stat-icon.orange { background-color: var(--color-primary-light); color: var(--color-primary); }
+.quick-stat-icon.teal { background-color: var(--color-teal-light); color: var(--color-teal); }
+.quick-stat-icon.blue { background-color: var(--color-blue-light); color: var(--color-blue); }
+
+.quick-stat-info h5 {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.quick-stat-info p {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+/* 詳情頁內容區塊 */
+.detail-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.detail-section:last-of-type {
+  border-bottom: none;
+}
+
+.detail-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+}
+
+.detail-section-title .section-icon {
+  color: var(--color-primary);
+}
+
+/* 行程推薦卡片 (Itinerary) */
+.itinerary-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.itinerary-day-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #FF8A65 100%);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.itinerary-title {
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
+.itinerary-activities {
+  list-style: none;
+  padding-left: 0;
+}
+
+.itinerary-activities li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-body);
+}
+
+.itinerary-activities li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-teal);
+}
+
+/* 旅遊小叮嚀卡片 */
+.travel-tips-card {
+  background: linear-gradient(135deg, #FFF9F0 0%, #FFF3E0 100%);
+  border: 1px solid rgba(255, 112, 67, 0.3);
+  border-radius: var(--radius-md);
+  padding: 26px;
+}
+
+.tip-block {
+  margin-bottom: 16px;
+}
+
+.tip-block:last-child {
+  margin-bottom: 0;
+}
+
+.tip-block-title {
+  font-weight: 700;
+  color: var(--color-primary-hover);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. 收藏頁 Favorites Layout
+   -------------------------------------------------------------------------- */
+.favorites-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 12px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tab-btn.active {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--color-border);
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.empty-state h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   9. 資料來源與圖片授權頁 Sources & Credits
+   -------------------------------------------------------------------------- */
+.credits-table-wrapper {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+  margin-bottom: 40px;
+}
+
+.credits-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: left;
+}
+
+.credits-table th {
+  background-color: #FFF3E0;
+  padding: 14px 18px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.credits-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.credits-table tr:hover {
+  background-color: rgba(255, 248, 237, 0.6);
+}
+
+.credit-thumb {
+  width: 60px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* --------------------------------------------------------------------------
+   10. 頁尾 Footer
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: #1A1F2C;
+  color: #E2E8F0;
+  padding: 60px 0 30px;
+  margin-top: 60px;
+  border-top: 4px solid var(--color-primary);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h4 {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.footer-brand h4 span {
+  color: var(--color-primary);
+}
+
+.footer-brand p {
+  color: #A0AEC0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-col h5 {
+  color: #FFFFFF;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-col h5::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #A0AEC0;
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-secondary);
+}
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+/* --------------------------------------------------------------------------
+   11. 響應式中斷點 (Responsive Queries)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .hero-visual {
+    order: -1;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 2px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .detail-hero {
+    min-height: 360px;
+  }
+
+  .detail-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .destination-grid,
+  .attraction-grid,
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+}

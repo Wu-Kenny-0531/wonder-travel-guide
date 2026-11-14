@@ -1,0 +1,194 @@
+/**
+ * attractions.js - GoWonder Travel Guide 景點資料清單
+ * 依據 AGENTS.md 規範，所有欄位、關聯 destinationId、sourceIds 與 imageCreditIds 均精確查證且對應。
+ */
+
+export const attractions = [
+  // ================= 日本京都 Kyoto =================
+  {
+    id: "kyoto-kinkakuji",
+    destinationId: "kyoto",
+    name: "金閣寺（鹿苑寺）",
+    englishName: "Kinkaku-ji",
+    category: "文化歷史",
+    description: "金閣寺正式名稱為鹿苑寺，是室町時代足利義滿將軍所建的臨濟宗佛寺。其核心舍利殿外牆覆蓋著純金箔，在陽光照耀下倒映於鏡湖池水中，呈現出極致典雅的北山文化之美，為世界文化遺產。",
+    highlights: ["金箔覆蓋的三層舍利殿", "鏡湖池倒影仙境", "回遊式庭園景致"],
+    openingHours: "09:00 - 17:00 全年無休",
+    address: "京都市北區金閣寺町1",
+    image: "./images/attractions/kyoto-kinkakuji.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-kyoto-kinkakuji"],
+    sourceIds: ["source-kyoto-official", "source-kyoto-kinkakuji"]
+  },
+  {
+    id: "kyoto-fushimi-inari",
+    destinationId: "kyoto",
+    name: "伏見稻荷大社",
+    englishName: "Fushimi Inari-Taisha",
+    category: "文化歷史",
+    description: "日本全國三萬座稻荷神社的總本社，供奉掌管農業與商業繁榮的稻荷大神。後方稻荷山綿延數千座由信徒奉獻的朱紅色「千本鳥居」，形成一條極富神秘感與視覺震撼的朱紅長廊。",
+    highlights: ["千本鳥居神秘赤紅長廊", "白狐狸使者雕像與繪馬", "稻荷山山林健行步道"],
+    openingHours: "境內全天24小時開放參拜 (授與所 08:30 - 16:30)",
+    address: "京都市伏見區深草藪之內町68",
+    image: "./images/attractions/kyoto-fushimi.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1478436127897-769e00d0c715?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-kyoto-fushimi"],
+    sourceIds: ["source-kyoto-official", "source-kyoto-fushimi"]
+  },
+  {
+    id: "kyoto-kiyomizu-dera",
+    destinationId: "kyoto",
+    name: "音羽山清水寺",
+    englishName: "Kiyomizu-dera",
+    category: "文化歷史",
+    description: "始建於公元778年的千年古剎，以完全未使用一釘一鉚、僅依卡榫搭建在懸崖上的「清水舞台」聞名於世。下方音羽瀑布分流為學業、戀愛與健康三股清泉，自古吸引絡繹不絕的參拜人潮。",
+    highlights: ["懸空13公尺國寶級清水舞台", "音羽之瀧三道清泉祈福", "三年坂二年坂傳統古街風情"],
+    openingHours: "06:00 - 18:00 (夜間拜觀期間延長至 21:30)",
+    address: "京都市東山區清水1丁目294",
+    image: "./images/attractions/kyoto-kiyomizu.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-kyoto-kiyomizu"],
+    sourceIds: ["source-kyoto-official", "source-jnto-japan"]
+  },
+  {
+    id: "kyoto-arashiyama-bamboo",
+    destinationId: "kyoto",
+    name: "嵐山竹林小徑",
+    englishName: "Arashiyama Bamboo Grove",
+    category: "自然景觀",
+    description: "位於京都西郊嵐山地區的綠色奇蹟，漫步在兩側高聳入天的青翠野宮竹林之中，微風拂過時竹葉沙沙作響，名列「日本百大想保留的聲音風景」，鄰近天龍寺曹源池庭園與渡月橋。",
+    highlights: ["高聳蔽日綠色竹林步道", "野宮神社結緣求子祈願", "渡月橋山水畫意湖光景致"],
+    openingHours: "全天開放自由參觀 (建議清晨造訪體驗靜謐氛圍)",
+    address: "京都市右京區嵯峨小倉山田淵山町",
+    image: "./images/attractions/kyoto-arashiyama.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-kyoto-arashiyama"],
+    sourceIds: ["source-kyoto-official", "source-jnto-japan"]
+  },
+
+  // ================= 台灣台北 Taipei =================
+  {
+    id: "taipei-101",
+    destinationId: "taipei",
+    name: "台北101觀景台",
+    englishName: "Taipei 101 Observatory",
+    category: "城市地標",
+    description: "台北最具代表性的當代超高層地標，樓高508公尺，融合傳統竹節象徵節節高升與當代高科技結構。登上89樓觀景台可360度俯瞰整個台北盆地與群山環抱，更能近距離親眼目睹重達660公噸的金色風阻尼球。",
+    highlights: ["超高速景觀雙層電梯", "世界最大開放參觀金色風阻尼球", "89樓與101樓天際雲端景致"],
+    openingHours: "10:00 - 21:00 (最後購票/入場 20:15)",
+    address: "台北市信義區信義路五段7號",
+    image: "./images/attractions/taipei-101.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1538356262335-51b68a735072?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-taipei-101"],
+    sourceIds: ["source-taipei-travel", "source-taipei-metro"]
+  },
+  {
+    id: "taipei-palace-museum",
+    destinationId: "taipei",
+    name: "國立故宮博物院",
+    englishName: "National Palace Museum",
+    category: "文化歷史",
+    description: "座落於外雙溪翠綠山谷間，典藏近七十萬件中華歷朝歷代皇家藝術珍寶與善本古籍，包括翠玉白菜、肉形石、毛公鼎等傳世重器，被公認為全球四大頂尖古代藝術博物館之一。",
+    highlights: ["舉世聞名翠玉白菜與肉形石", "宋元明清宮廷名瓷字畫", "至善園仿宋園林幽靜遊賞"],
+    openingHours: "週二至週日 09:00 - 17:00 (週一休館)",
+    address: "台北市士林區至善路二段221號",
+    image: "./images/attractions/taipei-palace.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-taipei-palace"],
+    sourceIds: ["source-taipei-travel", "source-npm-taiwan"]
+  },
+  {
+    id: "taipei-elephant-mountain",
+    destinationId: "taipei",
+    name: "象山親山步道",
+    englishName: "Elephant Mountain (Xiangshan)",
+    category: "自然景觀",
+    description: "位於信義區南側的象山，是俯瞰台北盆地天際線與台北101的最佳自然觀景點。步道全長約1.5公里、石階平整修築，沿途經過「攝手平台」與標誌性的「六巨石」，黃昏與入夜時分是攝影愛好者的朝聖聖地。",
+    highlights: ["近距離直面台北101百萬夜景", "六巨石攀爬眺望台北盆地", "捷運象山站步行10分鐘直達登山口"],
+    openingHours: "全天24小時開放 (夜間步道有路燈照明)",
+    address: "台北市信義區信義路五段150巷",
+    image: "./images/attractions/taipei-elephant.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1470004914212-259bd0cfcbac?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-taipei-elephant"],
+    sourceIds: ["source-taipei-travel", "source-taipei-metro"]
+  },
+  {
+    id: "taipei-shilin-night-market",
+    destinationId: "taipei",
+    name: "士林夜市",
+    englishName: "Shilin Night Market",
+    category: "夜市商圈",
+    description: "台北最具國際知名度的觀光夜市之一，劃分為基河路上的地下美食街與文林路、大東路等戶外街區。匯聚了士林大香腸、豪大大雞排、生煎包、生炒花枝、泡泡冰等數百攤台灣傳統經典街頭美食。",
+    highlights: ["上百種經典台灣街頭特色小吃", "老街傳統店鋪與生活潮流服飾", "捷運劍潭站出站即達便捷交通"],
+    openingHours: "16:00 - 24:00 全年無休 (各攤商略有不同)",
+    address: "台北市士林區基河路101號周邊",
+    image: "./images/attractions/taipei-shilin.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-taipei-shilin"],
+    sourceIds: ["source-taipei-travel", "source-taipei-metro"]
+  },
+
+  // ================= 泰國曼谷 Bangkok =================
+  {
+    id: "bangkok-grand-palace",
+    destinationId: "bangkok",
+    name: "曼谷大皇宮與玉佛寺",
+    englishName: "The Grand Palace & Wat Phra Kaew",
+    category: "文化歷史",
+    description: "自1782年起作為暹羅卻克里王朝的王室居所與政務中心，佔地廣達21萬平方公尺。宮內包含供奉泰國國寶翡翠玉佛的玉佛寺，整座建築群雕樑畫棟、貼飾金箔與七彩琉璃瓷片，展現極致華麗的暹羅佛教建築藝術巔峰。",
+    highlights: ["供奉泰國最神聖翡翠玉佛像", "節基宮融匯泰歐合璧皇室建築", "長達兩公里描繪羅摩衍那巨型壁畫"],
+    openingHours: "08:30 - 15:30 (每日售票開放，服裝須端莊長褲長裙遮袖)",
+    address: "Na Phra Lan Rd, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok",
+    image: "./images/attractions/bangkok-palace.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1563492065599-3580f777d662?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-bangkok-palace"],
+    sourceIds: ["source-tat-thailand", "source-bangkok-grand-palace"]
+  },
+  {
+    id: "bangkok-wat-arun",
+    destinationId: "bangkok",
+    name: "鄭王廟（黎明寺）",
+    englishName: "Wat Arun (Temple of Dawn)",
+    category: "文化歷史",
+    description: "矗立於湄南河（昭披耶河）西岸的地標級佛寺，中央高達82公尺的大乘舍利塔（巴普朗）鑲嵌數以萬計由中國商船壓艙運來的彩色碎陶瓷與貝殼花卉浮雕，晨曦或落日時分河畔金光閃耀，氣勢恢宏。",
+    highlights: ["82米高細膩彩色陶瓷尖頂主塔", "昭披耶河畔絕美日落攝影機位", "體驗泰國傳統宮廷服飾拍照留念"],
+    openingHours: "08:00 - 18:00 全年無休",
+    address: "158 Thanon Wang Doem, Wat Arun, Bangkok Yai, Bangkok",
+    image: "./images/attractions/bangkok-watarun.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-bangkok-watarun"],
+    sourceIds: ["source-tat-thailand", "source-bangkok-bts"]
+  },
+  {
+    id: "bangkok-chatuchak-market",
+    destinationId: "bangkok",
+    name: "恰圖恰週末市集",
+    englishName: "Chatuchak Weekend Market",
+    category: "市集購物",
+    description: "全球規模最大的露天市集之一，擁有超過15,000個攤位，依照商品性質劃分為27個區域，從泰國文創手作設計、復古古董、香氛精油、棉麻服飾到街頭小吃應有盡有，是體驗曼谷熱鬧市井活力的首選寶庫。",
+    highlights: ["超過15,000個多樣化風格攤位", "泰國原創獨立設計師服飾與家居", "市集角落椰子冰淇淋與手搖泰奶小吃"],
+    openingHours: "週六與週日 09:00 - 18:00 (週五下午有部分批發攤位)",
+    address: "Kamphaeng Phet 2 Rd, Chatuchak, Bangkok",
+    image: "./images/attractions/bangkok-chatuchak.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-bangkok-chatuchak"],
+    sourceIds: ["source-tat-thailand", "source-bangkok-bts"]
+  },
+  {
+    id: "bangkok-chao-phraya-river",
+    destinationId: "bangkok",
+    name: "昭披耶河水上交通船體驗",
+    englishName: "Chao Phraya River Ferry & Cruises",
+    category: "休閒體驗",
+    description: "昭披耶河被譽為泰國的生命之河。搭乘橘旗公共水上交通船或夜間觀光遊船，穿梭於中央碼頭、鄭王廟、大皇宮與 ICONSIAM 暹羅天地購物中心之間，以最道地且悠閒的視角飽覽曼谷傳統水鄉與現代摩登交織的風貌。",
+    highlights: ["親民票價暢遊沿岸各大核心文化景點", "ICONSIAM 豪華水岸聲光噴泉夜景", "日落時分河面迎風巡航體驗"],
+    openingHours: "橘旗公共船 06:00 - 19:00 (觀光遊船營運至 21:30)",
+    address: "Sathorn Pier (Central Pier) 捷運 Saphan Taksin 站旁",
+    image: "./images/attractions/bangkok-river.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-bangkok-river"],
+    sourceIds: ["source-tat-thailand", "source-bangkok-bts"]
+  }
+];
+
+export default attractions;

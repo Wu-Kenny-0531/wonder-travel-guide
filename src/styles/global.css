@@ -1,0 +1,292 @@
+/* ==========================================================================
+   GoWonder Travel Guide - 全域樣式 (global.css)
+   嚴格遵照 AGENTS.md 品牌規範定義之配色與視覺系統
+   ========================================================================== */
+
+:root {
+  /* 品牌核心色彩 (AGENTS.md 規範) */
+  --color-primary: #FF7043;          /* 主要橘色 */
+  --color-primary-hover: #F4511E;    /* 主要橘色 Hover */
+  --color-primary-light: #FFECE6;    /* 橘色輕底 */
+  --color-secondary: #FFD166;        /* 輔助黃色 */
+  --color-secondary-light: #FFF8E1;  /* 黃色輕底 */
+  --color-teal: #06B6A4;             /* 輔助青綠色 */
+  --color-teal-light: #E0F7F5;       /* 青綠色輕底 */
+  --color-blue: #4C78E8;             /* 輔助藍色 */
+  --color-blue-light: #EEF2FD;       /* 藍色輕底 */
+  --color-bg: #FFF8ED;               /* 頁面背景：奶油白 */
+  --color-surface: #FFFFFF;          /* 卡片與元件白色表面 */
+
+  /* 文字與中性色 (高對比好閱讀) */
+  --color-text-main: #23272F;        /* 主要標題與深色文字 */
+  --color-text-body: #4A5568;        /* 正文文字 */
+  --color-text-muted: #718096;       /* 次要與輔助文字 */
+  --color-border: #EADBCC;           /* 配合奶油白的溫暖邊框色 */
+  --color-border-focus: #FF7043;
+
+  /* 陰影與圓角 */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(35, 39, 47, 0.05);
+  --shadow-md: 0 8px 24px rgba(255, 112, 67, 0.08), 0 3px 10px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 16px 36px rgba(255, 112, 67, 0.12), 0 6px 16px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 14px 28px rgba(35, 39, 47, 0.12);
+
+  /* 轉場動畫 */
+  --transition-fast: 0.18s ease-in-out;
+  --transition-base: 0.28s ease;
+
+  /* 最大寬度 */
+  --max-width: 1200px;
+}
+
+/* CSS Reset & 基本屬性 */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* 嚴禁水平溢位 */
+  background-color: var(--color-bg);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 標題與排版 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-main);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); }
+h4 { font-size: 1.15rem; }
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* 佈局容器 */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.main-content {
+  flex: 1 0 auto;
+}
+
+/* 通用按鈕樣式 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(255, 112, 67, 0.28);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 6px 18px rgba(255, 112, 67, 0.38);
+  transform: translateY(-1px);
+  color: #FFFFFF;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-teal {
+  background-color: var(--color-teal);
+  color: #FFFFFF;
+}
+
+.btn-teal:hover {
+  background-color: #059b8b;
+  color: #FFFFFF;
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text-main);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+/* 標籤徽章 (Badges) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.badge-secondary {
+  background-color: var(--color-secondary-light);
+  color: #B28200;
+}
+
+.badge-teal {
+  background-color: var(--color-teal-light);
+  color: #058477;
+}
+
+.badge-blue {
+  background-color: var(--color-blue-light);
+  color: var(--color-blue);
+}
+
+.badge-verified {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+  border: 1px solid #A5D6A7;
+}
+
+/* 區塊標題模組 */
+.section-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.section-header .section-tag {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-secondary-light);
+  color: #A36B00;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 209, 102, 0.4);
+}
+
+.section-header h2 {
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* 頁面通用 Hero 區塊 */
+.page-banner {
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFF8ED 100%);
+  border-bottom: 1px solid var(--color-border);
+  padding: 48px 0 40px;
+  margin-bottom: 40px;
+}
+
+.page-banner-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  margin-bottom: 12px;
+}
+
+.page-banner-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  max-width: 720px;
+}
+
+/* 響應式微調 */
+@media (max-width: 768px) {
+  .page-banner {
+    padding: 32px 0 28px;
+    margin-bottom: 24px;
+  }
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

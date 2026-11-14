@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoWonder Travel Guide | Explore More. Travel Better. (本機預覽版)</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23FF7043'/><polygon points='50,18 62,48 50,42 38,48' fill='%23FFF8ED'/><polygon points='50,82 62,52 50,58 38,52' fill='%23FFD166'/><circle cx='50' cy='50' r='6' fill='%2306B6A4'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles/global.css">
+  <link rel="stylesheet" href="./src/styles/components.css">
+  <!-- React 18 & Babel Standalone (無需本機安裝 Node/npm，雙擊本 HTML 即可在瀏覽器直接執行) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useMemo, useCallback } = React;
+
+    // ================= 旅遊資料模組 =================
+    const destinations = [
+  {
+    "id": "kyoto",
+    "name": "京都",
+    "englishName": "Kyoto",
+    "country": "日本",
+    "countryCode": "JP",
+    "slogan": "漫步千年底蘊古都，細品禪意庭園與和風四季之美",
+    "description": "京都作為日本過去逾千年的古都，擁有超過兩千座歷史神社與佛寺，其中十七處被聯合國教科文組織列為世界文化遺產。漫步於花見小路古町家木造建築間、穿梭伏見稻荷千本鳥居長廊，或是於嵐山清幽竹林聆聽風吟，四季分明的春櫻、秋楓與冬雪，無時無刻不散發著寧靜深厚的文化魅力。",
+    "coverImage": "./images/destinations/kyoto.jpg",
+    "coverImageUrl": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80",
+    "tags": [
+      "世界遺產",
+      "寺社庭園",
+      "和服體驗",
+      "抹茶甜點",
+      "古町家街區"
+    ],
+    "travelTips": {
+      "bestSeason": "3月下旬至4月中旬（櫻花季）、11月中旬至12月上旬（楓紅季）氣候最為怡人景色極佳。",
+      "transitAdvice": "京都市內主要以京都市營巴士、地下鐵與京阪/阪急電鐵為主，建議使用 IC 卡（如 ICOCA / Suica）或巴士一日券乘車。",
+      "localEtiquette": "在祇園與宮川町等歷史保護街區拍攝藝妓或舞妓時請保持距離切勿阻攔，私家小巷禁止進入攝影；參拜神社洗手滌心請遵守手水舍禮儀。"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "經典世界遺產巡禮：伏見與東山名剎",
+        "activities": [
+          "上午：清晨前往「伏見稻荷大社」，穿梭千本鳥居感受晨曦與朱紅長廊的靜謐之美。",
+          "下午：漫步「音羽山清水寺」，登上懸空清水舞台俯瞰京都市景，體驗音羽瀑布甘泉祈福。",
+          "傍晚：散步二年坂、三年坂古風石板路，在八坂神社前體驗熱鬧祇園黃昏街景。"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "北山禪風與西郊嵐山自然風光",
+        "activities": [
+          "上午：搭乘巴士造訪「金閣寺（鹿苑寺）」，欣賞金色舍利殿倒映於鏡湖池中的絕景。",
+          "下午：搭乘嵐電抵達嵐山，漫步「嵐山竹林小徑」與天龍寺曹源池庭園。",
+          "傍晚：漫步渡月橋畔欣賞桂川水光，品嚐宇治抹茶聖代與日式和菓子茶點。"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "鴨川慢活與深度京町家美食探索",
+        "activities": [
+          "上午：沿著哲學之道或鴨川三角洲悠閒散步，探訪隱密的文青咖啡館與老舖雜貨。",
+          "下午：錦市場探索在地漬物、生麩甜品與抹茶冰淇淋，感受「京都廚房」的熱絡生氣。",
+          "晚間：預約一頓正統「京懷石料理」或鴨川納涼床晚餐，為古都旅程畫下完美句點。"
+        ]
+      }
+    ],
+    "attractionIds": [
+      "kyoto-kinkakuji",
+      "kyoto-fushimi-inari",
+      "kyoto-kiyomizu-dera",
+      "kyoto-arashiyama-bamboo"
+    ],
+    "foodIds": [
+      "kyoto-matcha",
+      "kyoto-kaiseki"
+    ],
+    "sourceIds": [
+      "source-kyoto-official",
+      "source-jnto-japan",
+      "source-kyoto-kinkakuji",
+      "source-kyoto-fushimi"
+    ]
+  },
+  {
+    "id": "taipei",
+    "name": "台北",
+    "englishName": "Taipei",
+    "country": "台灣",
+    "countryCode": "TW",
+    "slogan": "摩登都會與傳統人情交會，從世界地標到巷弄夜市的美味探索",
+    "description": "台北是一座充滿生機且兼具國際都會與傳統在地底蘊的迷人城市。便捷的台北捷運網絡串聯起高聳入雲的台北101、珍藏中華千年藝術至寶的國立故宮博物院，以及群山環抱的象山步道；入夜後，各大觀光夜市散發誘人香氣，從牛肉麵、小籠包到珍珠奶茶，展現熱情溫暖的人情味與美食王國魅力。",
+    "coverImage": "./images/destinations/taipei.jpg",
+    "coverImageUrl": "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=1200&q=80",
+    "tags": [
+      "城市地標",
+      "故宮國寶",
+      "夜市小吃",
+      "自然步道",
+      "便捷捷運"
+    ],
+    "travelTips": {
+      "bestSeason": "10月至隔年4月氣候涼爽宜人，秋高氣爽非常適合戶外步道健行與城市街道漫步。",
+      "transitAdvice": "台北捷運（MRT）極其準時且覆蓋密集，配合 YouBike 共享單車與公車，使用悠遊卡（EasyCard）即可暢行無阻。",
+      "localEtiquette": "搭乘台北捷運時「黃線區內禁止飲食、嚼食口香糖」；手扶梯雖已宣導兩側皆可站立，尖峰時段多數民眾仍自發靠右站立。"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "信義天際線與象山百萬夜景之旅",
+        "activities": [
+          "上午：搭乘捷運紅線抵達「台北101觀景台」，俯瞰全台北市區天際線並參觀金色阻尼球。",
+          "下午：在信義區商圈與四四南村眷村文創園區漫步，體驗現代時尚與眷村老時光的對比。",
+          "傍晚：步行前往「象山親山步道」，登上六巨石眺望台北101日落黃昏與璀璨璀璨百萬夜景。"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "國寶人文殿堂與熱鬧士林夜市美食",
+        "activities": [
+          "上午：前往外雙溪參觀「國立故宮博物院」，細賞翠玉白菜、肉形石與毛公鼎等國寶精品。",
+          "下午：返回士林官邸花園漫步，或前往大稻埕迪化街感受百年中藥南北貨與文青老宅茶館。",
+          "晚間：造訪國際知名的「士林夜市」，大啖生煎包、豪大大雞排、士林大香腸與木瓜牛奶。"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "人文永康街小吃與文青松菸散策",
+        "activities": [
+          "上午：前往永康商圈品嚐剛出爐皮薄多汁的經典小籠湯包與芒果雪花冰。",
+          "下午：逛逛松山文創園區（松菸）或華山1914文創園區，體驗台灣在地設計品牌與展覽。",
+          "傍晚：晚餐享用一碗濃郁熱氣騰騰的紅燒牛肉麵，為台北美食之旅劃下完美句點。"
+        ]
+      }
+    ],
+    "attractionIds": [
+      "taipei-101",
+      "taipei-palace-museum",
+      "taipei-elephant-mountain",
+      "taipei-shilin-night-market"
+    ],
+    "foodIds": [
+      "taipei-beef-noodles",
+      "taipei-xiaolongbao"
+    ],
+    "sourceIds": [
+      "source-taipei-travel",
+      "source-npm-taiwan",
+      "source-taipei-metro"
+    ]
+  },
+  {
+    "id": "bangkok",
+    "name": "曼谷",
+    "englishName": "Bangkok",
+    "country": "泰國",
+    "countryCode": "TH",
+    "slogan": "金碧輝煌的暹羅佛寺、湄南河日落與活力澎湃的市集饗宴",
+    "description": "曼谷是一座充滿對比與活力的熱情南洋大都會。沿著昭披耶河畔，矗立著氣勢恢宏的曼谷大皇宮、玉佛寺與鄭王廟黎明塔，彩色陶瓷在豔陽下熠熠生輝；走入市區，穿梭於全球規模最大的恰圖恰週末市集與摩登購物商城，處處飄香的泰式炒河粉、冬陰功與甜美芒果糯米飯，讓人深深沉醉於泰式微笑的熱情魅力中。",
+    "coverImage": "./images/destinations/bangkok.jpg",
+    "coverImageUrl": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80",
+    "tags": [
+      "暹羅佛寺",
+      "水上交通船",
+      "週末市集",
+      "南洋美食",
+      "夜生活"
+    ],
+    "travelTips": {
+      "bestSeason": "11月至隔年2月為涼季，降雨少且氣溫較為舒適，是拜訪曼谷的最佳黃金旅遊期。",
+      "transitAdvice": "避開曼谷道路巔峰大塞車，請善用 BTS 輕軌、MRT 地鐵及昭披耶河水上公共渡輪（橘旗船），省時又經濟實惠。",
+      "localEtiquette": "進入大皇宮與寺廟參拜時務必穿著過膝長褲或長裙，肩部不得裸露（不可穿無袖、短褲、破洞褲或拖鞋）；尊重泰國王室與僧侶。"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "暹羅王室威嚴與湄南河經典水岸佛塔",
+        "activities": [
+          "上午：參觀金碧輝煌的「曼谷大皇宮」與「玉佛寺」，欣賞精雕細琢的泰國國寶玉佛與史詩壁畫。",
+          "下午：搭乘渡輪前往對岸「鄭王廟（Wat Arun）」，近距離欣賞鑲嵌細緻彩色陶瓷的巴普朗尖塔。",
+          "傍晚：搭乘「昭披耶河水上交通船」前往 ICONSIAM 水岸購物商城，在露天露台欣賞湄南河日落與噴泉秀。"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "恰圖恰市集尋寶與道地泰式街頭小吃",
+        "activities": [
+          "上午：搭乘 BTS 至 Mo Chit 站，探訪擁有一萬五千攤的「恰圖恰週末市集」，挖掘文創手工藝與香氛。",
+          "中午：在市集內享用現炒熱騰騰的「泰式鮮蝦炒金邊粉 (Pad Thai)」配清涼香水椰子水。",
+          "傍晚：返回市中心暹羅商圈（Siam Paragon / CentralWorld）享受正宗泰式精油按摩舒緩雙腿。"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "水上市場風情與夜市熱情滋味",
+        "activities": [
+          "上午：體驗丹能莎朵或安帕瓦水上市場，看著載滿熱帶水果與熱湯麵的小木舟在水巷穿梭。",
+          "下午：品嚐香甜濃郁的「經典香蘭椰汁芒果糯米飯」，口感香甜糯潤。",
+          "晚間：造訪喬德夜市（Jodd Fairs）或河畔夜市（Asiatique），感受泰國摩登不夜城的澎湃熱情。"
+        ]
+      }
+    ],
+    "attractionIds": [
+      "bangkok-grand-palace",
+      "bangkok-wat-arun",
+      "bangkok-chatuchak-market",
+      "bangkok-chao-phraya-river"
+    ],
+    "foodIds": [
+      "bangkok-pad-thai",
+      "bangkok-mango-sticky-rice"
+    ],
+    "sourceIds": [
+      "source-tat-thailand",
+      "source-bangkok-grand-palace",
+      "source-bangkok-bts"
+    ]
+  }
+];
+    const attractions = [
+  {
+    "id": "kyoto-kinkakuji",
+    "destinationId": "kyoto",
+    "name": "金閣寺（鹿苑寺）",
+    "englishName": "Kinkaku-ji",
+    "category": "文化歷史",
+    "description": "金閣寺正式名稱為鹿苑寺，是室町時代足利義滿將軍所建的臨濟宗佛寺。其核心舍利殿外牆覆蓋著純金箔，在陽光照耀下倒映於鏡湖池水中，呈現出極致典雅的北山文化之美，為世界文化遺產。",
+    "highlights": [
+      "金箔覆蓋的三層舍利殿",
+      "鏡湖池倒影仙境",
+      "回遊式庭園景致"
+    ],
+    "openingHours": "09:00 - 17:00 全年無休",
+    "address": "京都市北區金閣寺町1",
+    "image": "./images/attractions/kyoto-kinkakuji.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-kyoto-kinkakuji"
+    ],
+    "sourceIds": [
+      "source-kyoto-official",
+      "source-kyoto-kinkakuji"
+    ]
+  },
+  {
+    "id": "kyoto-fushimi-inari",
+    "destinationId": "kyoto",
+    "name": "伏見稻荷大社",
+    "englishName": "Fushimi Inari-Taisha",
+    "category": "文化歷史",
+    "description": "日本全國三萬座稻荷神社的總本社，供奉掌管農業與商業繁榮的稻荷大神。後方稻荷山綿延數千座由信徒奉獻的朱紅色「千本鳥居」，形成一條極富神秘感與視覺震撼的朱紅長廊。",
+    "highlights": [
+      "千本鳥居神秘赤紅長廊",
+      "白狐狸使者雕像與繪馬",
+      "稻荷山山林健行步道"
+    ],
+    "openingHours": "境內全天24小時開放參拜 (授與所 08:30 - 16:30)",
+    "address": "京都市伏見區深草藪之內町68",
+    "image": "./images/attractions/kyoto-fushimi.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1478436127897-769e00d0c715?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-kyoto-fushimi"
+    ],
+    "sourceIds": [
+      "source-kyoto-official",
+      "source-kyoto-fushimi"
+    ]
+  },
+  {
+    "id": "kyoto-kiyomizu-dera",
+    "destinationId": "kyoto",
+    "name": "音羽山清水寺",
+    "englishName": "Kiyomizu-dera",
+    "category": "文化歷史",
+    "description": "始建於公元778年的千年古剎，以完全未使用一釘一鉚、僅依卡榫搭建在懸崖上的「清水舞台」聞名於世。下方音羽瀑布分流為學業、戀愛與健康三股清泉，自古吸引絡繹不絕的參拜人潮。",
+    "highlights": [
+      "懸空13公尺國寶級清水舞台",
+      "音羽之瀧三道清泉祈福",
+      "三年坂二年坂傳統古街風情"
+    ],
+    "openingHours": "06:00 - 18:00 (夜間拜觀期間延長至 21:30)",
+    "address": "京都市東山區清水1丁目294",
+    "image": "./images/attractions/kyoto-kiyomizu.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-kyoto-kiyomizu"
+    ],
+    "sourceIds": [
+      "source-kyoto-official",
+      "source-jnto-japan"
+    ]
+  },
+  {
+    "id": "kyoto-arashiyama-bamboo",
+    "destinationId": "kyoto",
+    "name": "嵐山竹林小徑",
+    "englishName": "Arashiyama Bamboo Grove",
+    "category": "自然景觀",
+    "description": "位於京都西郊嵐山地區的綠色奇蹟，漫步在兩側高聳入天的青翠野宮竹林之中，微風拂過時竹葉沙沙作響，名列「日本百大想保留的聲音風景」，鄰近天龍寺曹源池庭園與渡月橋。",
+    "highlights": [
+      "高聳蔽日綠色竹林步道",
+      "野宮神社結緣求子祈願",
+      "渡月橋山水畫意湖光景致"
+    ],
+    "openingHours": "全天開放自由參觀 (建議清晨造訪體驗靜謐氛圍)",
+    "address": "京都市右京區嵯峨小倉山田淵山町",
+    "image": "./images/attractions/kyoto-arashiyama.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-kyoto-arashiyama"
+    ],
+    "sourceIds": [
+      "source-kyoto-official",
+      "source-jnto-japan"
+    ]
+  },
+  {
+    "id": "taipei-101",
+    "destinationId": "taipei",
+    "name": "台北101觀景台",
+    "englishName": "Taipei 101 Observatory",
+    "category": "城市地標",
+    "description": "台北最具代表性的當代超高層地標，樓高508公尺，融合傳統竹節象徵節節高升與當代高科技結構。登上89樓觀景台可360度俯瞰整個台北盆地與群山環抱，更能近距離親眼目睹重達660公噸的金色風阻尼球。",
+    "highlights": [
+      "超高速景觀雙層電梯",
+      "世界最大開放參觀金色風阻尼球",
+      "89樓與101樓天際雲端景致"
+    ],
+    "openingHours": "10:00 - 21:00 (最後購票/入場 20:15)",
+    "address": "台北市信義區信義路五段7號",
+    "image": "./images/attractions/taipei-101.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1538356262335-51b68a735072?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-taipei-101"
+    ],
+    "sourceIds": [
+      "source-taipei-travel",
+      "source-taipei-metro"
+    ]
+  },
+  {
+    "id": "taipei-palace-museum",
+    "destinationId": "taipei",
+    "name": "國立故宮博物院",
+    "englishName": "National Palace Museum",
+    "category": "文化歷史",
+    "description": "座落於外雙溪翠綠山谷間，典藏近七十萬件中華歷朝歷代皇家藝術珍寶與善本古籍，包括翠玉白菜、肉形石、毛公鼎等傳世重器，被公認為全球四大頂尖古代藝術博物館之一。",
+    "highlights": [
+      "舉世聞名翠玉白菜與肉形石",
+      "宋元明清宮廷名瓷字畫",
+      "至善園仿宋園林幽靜遊賞"
+    ],
+    "openingHours": "週二至週日 09:00 - 17:00 (週一休館)",
+    "address": "台北市士林區至善路二段221號",
+    "image": "./images/attractions/taipei-palace.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-taipei-palace"
+    ],
+    "sourceIds": [
+      "source-taipei-travel",
+      "source-npm-taiwan"
+    ]
+  },
+  {
+    "id": "taipei-elephant-mountain",
+    "destinationId": "taipei",
+    "name": "象山親山步道",
+    "englishName": "Elephant Mountain (Xiangshan)",
+    "category": "自然景觀",
+    "description": "位於信義區南側的象山，是俯瞰台北盆地天際線與台北101的最佳自然觀景點。步道全長約1.5公里、石階平整修築，沿途經過「攝手平台」與標誌性的「六巨石」，黃昏與入夜時分是攝影愛好者的朝聖聖地。",
+    "highlights": [
+      "近距離直面台北101百萬夜景",
+      "六巨石攀爬眺望台北盆地",
+      "捷運象山站步行10分鐘直達登山口"
+    ],
+    "openingHours": "全天24小時開放 (夜間步道有路燈照明)",
+    "address": "台北市信義區信義路五段150巷",
+    "image": "./images/attractions/taipei-elephant.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1470004914212-259bd0cfcbac?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-taipei-elephant"
+    ],
+    "sourceIds": [
+      "source-taipei-travel",
+      "source-taipei-metro"
+    ]
+  },
+  {
+    "id": "taipei-shilin-night-market",
+    "destinationId": "taipei",
+    "name": "士林夜市",
+    "englishName": "Shilin Night Market",
+    "category": "夜市商圈",
+    "description": "台北最具國際知名度的觀光夜市之一，劃分為基河路上的地下美食街與文林路、大東路等戶外街區。匯聚了士林大香腸、豪大大雞排、生煎包、生炒花枝、泡泡冰等數百攤台灣傳統經典街頭美食。",
+    "highlights": [
+      "上百種經典台灣街頭特色小吃",
+      "老街傳統店鋪與生活潮流服飾",
+      "捷運劍潭站出站即達便捷交通"
+    ],
+    "openingHours": "16:00 - 24:00 全年無休 (各攤商略有不同)",
+    "address": "台北市士林區基河路101號周邊",
+    "image": "./images/attractions/taipei-shilin.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-taipei-shilin"
+    ],
+    "sourceIds": [
+      "source-taipei-travel",
+      "source-taipei-metro"
+    ]
+  },
+  {
+    "id": "bangkok-grand-palace",
+    "destinationId": "bangkok",
+    "name": "曼谷大皇宮與玉佛寺",
+    "englishName": "The Grand Palace & Wat Phra Kaew",
+    "category": "文化歷史",
+    "description": "自1782年起作為暹羅卻克里王朝的王室居所與政務中心，佔地廣達21萬平方公尺。宮內包含供奉泰國國寶翡翠玉佛的玉佛寺，整座建築群雕樑畫棟、貼飾金箔與七彩琉璃瓷片，展現極致華麗的暹羅佛教建築藝術巔峰。",
+    "highlights": [
+      "供奉泰國最神聖翡翠玉佛像",
+      "節基宮融匯泰歐合璧皇室建築",
+      "長達兩公里描繪羅摩衍那巨型壁畫"
+    ],
+    "openingHours": "08:30 - 15:30 (每日售票開放，服裝須端莊長褲長裙遮袖)",
+    "address": "Na Phra Lan Rd, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok",
+    "image": "./images/attractions/bangkok-palace.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1563492065599-3580f777d662?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-bangkok-palace"
+    ],
+    "sourceIds": [
+      "source-tat-thailand",
+      "source-bangkok-grand-palace"
+    ]
+  },
+  {
+    "id": "bangkok-wat-arun",
+    "destinationId": "bangkok",
+    "name": "鄭王廟（黎明寺）",
+    "englishName": "Wat Arun (Temple of Dawn)",
+    "category": "文化歷史",
+    "description": "矗立於湄南河（昭披耶河）西岸的地標級佛寺，中央高達82公尺的大乘舍利塔（巴普朗）鑲嵌數以萬計由中國商船壓艙運來的彩色碎陶瓷與貝殼花卉浮雕，晨曦或落日時分河畔金光閃耀，氣勢恢宏。",
+    "highlights": [
+      "82米高細膩彩色陶瓷尖頂主塔",
+      "昭披耶河畔絕美日落攝影機位",
+      "體驗泰國傳統宮廷服飾拍照留念"
+    ],
+    "openingHours": "08:00 - 18:00 全年無休",
+    "address": "158 Thanon Wang Doem, Wat Arun, Bangkok Yai, Bangkok",
+    "image": "./images/attractions/bangkok-watarun.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-bangkok-watarun"
+    ],
+    "sourceIds": [
+      "source-tat-thailand",
+      "source-bangkok-bts"
+    ]
+  },
+  {
+    "id": "bangkok-chatuchak-market",
+    "destinationId": "bangkok",
+    "name": "恰圖恰週末市集",
+    "englishName": "Chatuchak Weekend Market",
+    "category": "市集購物",
+    "description": "全球規模最大的露天市集之一，擁有超過15,000個攤位，依照商品性質劃分為27個區域，從泰國文創手作設計、復古古董、香氛精油、棉麻服飾到街頭小吃應有盡有，是體驗曼谷熱鬧市井活力的首選寶庫。",
+    "highlights": [
+      "超過15,000個多樣化風格攤位",
+      "泰國原創獨立設計師服飾與家居",
+      "市集角落椰子冰淇淋與手搖泰奶小吃"
+    ],
+    "openingHours": "週六與週日 09:00 - 18:00 (週五下午有部分批發攤位)",
+    "address": "Kamphaeng Phet 2 Rd, Chatuchak, Bangkok",
+    "image": "./images/attractions/bangkok-chatuchak.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-bangkok-chatuchak"
+    ],
+    "sourceIds": [
+      "source-tat-thailand",
+      "source-bangkok-bts"
+    ]
+  },
+  {
+    "id": "bangkok-chao-phraya-river",
+    "destinationId": "bangkok",
+    "name": "昭披耶河水上交通船體驗",
+    "englishName": "Chao Phraya River Ferry & Cruises",
+    "category": "休閒體驗",
+    "description": "昭披耶河被譽為泰國的生命之河。搭乘橘旗公共水上交通船或夜間觀光遊船，穿梭於中央碼頭、鄭王廟、大皇宮與 ICONSIAM 暹羅天地購物中心之間，以最道地且悠閒的視角飽覽曼谷傳統水鄉與現代摩登交織的風貌。",
+    "highlights": [
+      "親民票價暢遊沿岸各大核心文化景點",
+      "ICONSIAM 豪華水岸聲光噴泉夜景",
+      "日落時分河面迎風巡航體驗"
+    ],
+    "openingHours": "橘旗公共船 06:00 - 19:00 (觀光遊船營運至 21:30)",
+    "address": "Sathorn Pier (Central Pier) 捷運 Saphan Taksin 站旁",
+    "image": "./images/attractions/bangkok-river.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-attr-bangkok-river"
+    ],
+    "sourceIds": [
+      "source-tat-thailand",
+      "source-bangkok-bts"
+    ]
+  }
+];
+    const food = [
+  {
+    "id": "kyoto-matcha",
+    "destinationId": "kyoto",
+    "name": "宇治抹茶甜點與白玉聖代",
+    "englishName": "Uji Matcha Parfait & Sweets",
+    "category": "甜點",
+    "description": "京都宇治自古為日本頂級綠茶產地。在京都町家茶屋中品嚐濃郁微苦的石臼研磨抹茶冰淇淋，搭配軟糯手工白玉糰子、十勝紅豆泥與寒天凍，層次深邃且甘醇回味。",
+    "recommendedSpots": "中村藤吉本店、茶寮都路里、祇園辻利",
+    "priceRange": "¥1,000 - ¥1,800",
+    "image": "./images/food/kyoto-matcha.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-food-kyoto-matcha"
+    ],
+    "sourceIds": [
+      "source-kyoto-official",
+      "source-jnto-japan"
+    ]
+  },
+  {
+    "id": "kyoto-kaiseki",
+    "destinationId": "kyoto",
+    "name": "京料理與懷石會席",
+    "englishName": "Kyoto Kaiseki Dining",
+    "category": "在地料理",
+    "description": "日本傳統料理的最高藝術殿堂，極致講究當令「旬」食材的原汁原味，結合精美陶器漆器與庭園意境。從八寸開胃菜、清蒸吸物到燒物、御飯，如同一場味覺與視覺兼備的五感盛宴。",
+    "recommendedSpots": "菊乃井、吉兆嵐山本店、高台寺和久傳",
+    "priceRange": "午間 ¥8,000 起 / 晚間 ¥18,000 起",
+    "image": "./images/food/kyoto-kaiseki.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-food-kyoto-kaiseki"
+    ],
+    "sourceIds": [
+      "source-kyoto-official",
+      "source-jnto-japan"
+    ]
+  },
+  {
+    "id": "taipei-beef-noodles",
+    "destinationId": "taipei",
+    "name": "台灣經典紅燒牛肉麵",
+    "englishName": "Taiwanese Braised Beef Noodle Soup",
+    "category": "在地料理",
+    "description": "台北最具代表性的靈魂麵食。以牛大骨、八角、花椒、洋蔥及豆瓣醬歷經數小時熬煮出深厚濃郁的湯頭，搭配軟嫩帶筋的牛腱肉與手工刀削寬麵，再撒上酸菜與蔥花，香氣四溢。",
+    "recommendedSpots": "林東芳牛肉麵、永康牛肉麵、劉山東牛肉麵",
+    "priceRange": "NT$ 180 - NT$ 280",
+    "image": "./images/food/taipei-beefnoodles.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-food-taipei-beefnoodles"
+    ],
+    "sourceIds": [
+      "source-taipei-travel"
+    ]
+  },
+  {
+    "id": "taipei-xiaolongbao",
+    "destinationId": "taipei",
+    "name": "黃金十八摺多汁小籠湯包",
+    "englishName": "Steamed Xiao Long Bao",
+    "category": "點心特產",
+    "description": "揚名全球的台灣麵食工藝指標。強調精準十八道手工黃金摺紋與薄透如紙的麵皮，包覆著鮮甜黑毛豬肉餡與特熬皮凍高湯，一口咬下瞬間爆出醇美鮮香的熱騰滾燙湯汁。",
+    "recommendedSpots": "鼎泰豐信義本店、盛園絲瓜小籠湯包、杭州小籠湯包",
+    "priceRange": "NT$ 150 - NT$ 320",
+    "image": "./images/food/taipei-xiaolongbao.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-food-taipei-xiaolongbao"
+    ],
+    "sourceIds": [
+      "source-taipei-travel"
+    ]
+  },
+  {
+    "id": "bangkok-pad-thai",
+    "destinationId": "bangkok",
+    "name": "泰式鮮蝦炒金邊粉 (Pad Thai)",
+    "englishName": "Pad Thai Goong",
+    "category": "在地料理",
+    "description": "泰國享譽全球的國民代表美食。大火快炒米粉、豆干丁、蘿蔔乾與爽脆豆芽菜，拌入羅望子醬、魚露、椰糖調合而成的酸甜秘醬，起鍋盛盤配上肥美鮮蝦、現擠青檸檬角與烤花生碎粒。",
+    "recommendedSpots": "Thip Samai 鬼門炒河粉、Baan Phadthai",
+    "priceRange": "THB 60 - THB 180",
+    "image": "./images/food/bangkok-padthai.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-food-bangkok-padthai"
+    ],
+    "sourceIds": [
+      "source-tat-thailand"
+    ]
+  },
+  {
+    "id": "bangkok-mango-sticky-rice",
+    "destinationId": "bangkok",
+    "name": "經典香蘭椰汁芒果糯米飯",
+    "englishName": "Mango Sticky Rice (Khao Niew Mamuang)",
+    "category": "甜點",
+    "description": "泰國最受歡迎的熱帶甜點。選用熟成度完美的泰國水仙金黃芒果切片，搭配蒸得溫熱彈牙、拌入濃郁椰漿的長粒糯米飯，最後澆淋微鹹椰奶並撒上酥脆金黃炸綠豆仁，甜潤綿滑令人陶醉。",
+    "recommendedSpots": "Mae Varee 芒果糯米飯專賣店、Kor Panich",
+    "priceRange": "THB 80 - THB 160",
+    "image": "./images/food/bangkok-mangorice.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
+    "imageCreditIds": [
+      "credit-food-bangkok-mangorice"
+    ],
+    "sourceIds": [
+      "source-tat-thailand"
+    ]
+  }
+];
+    const sources = [
+  {
+    "id": "source-kyoto-official",
+    "name": "京都市觀光協會官方網站 (Kyoto City Tourism Association - KYOTO CITY OFFICIAL TRAVEL GUIDE)",
+    "url": "https://kyoto.travel/tw/",
+    "type": "官方旅遊網站",
+    "accessedAt": "2026-11-14",
+    "notes": "提供京都市官方認證之景點開放時間、交通方式及四季旅遊指引。"
+  },
+  {
+    "id": "source-jnto-japan",
+    "name": "日本國家旅遊局 (JNTO) 日本觀光局官方網站",
+    "url": "https://www.japan.travel/zh-tw/",
+    "type": "政府觀光機關",
+    "accessedAt": "2026-11-14",
+    "notes": "日本文化遺產、神社寺院禮儀與關西鐵路交通資訊。"
+  },
+  {
+    "id": "source-kyoto-kinkakuji",
+    "name": "臨濟宗相國寺派 鹿苑寺（金閣寺）官方網站",
+    "url": "https://www.shokoku-ji.jp/kinkakuji/",
+    "type": "景點官方網站",
+    "accessedAt": "2026-11-14",
+    "notes": "金閣寺歷史背景、舍利殿建築特色與拜觀時間。"
+  },
+  {
+    "id": "source-kyoto-fushimi",
+    "name": "伏見稻荷大社官方網站 (Fushimi Inari Taisha)",
+    "url": "http://inari.jp/",
+    "type": "景點官方網站",
+    "accessedAt": "2026-11-14",
+    "notes": "千本鳥居參拜規範與全天候開放參拜指南。"
+  },
+  {
+    "id": "source-taipei-travel",
+    "name": "台北旅遊網 (Taipei Travel) - 臺北市政府觀光傳播局",
+    "url": "https://www.travel.taipei/zh-tw",
+    "type": "官方旅遊網站",
+    "accessedAt": "2026-11-14",
+    "notes": "台北101、夜市商圈、象山步道交通與台北市特色美食指引。"
+  },
+  {
+    "id": "source-npm-taiwan",
+    "name": "國立故宮博物院官方網站 (National Palace Museum)",
+    "url": "https://www.npm.gov.tw/",
+    "type": "景點官方網站",
+    "accessedAt": "2026-11-14",
+    "notes": "常設展覽資訊、文物典藏說明與參觀須知。"
+  },
+  {
+    "id": "source-taipei-metro",
+    "name": "台北大眾捷運股份有限公司 (Taipei Metro)",
+    "url": "https://www.metro.taipei/",
+    "type": "官方交通網站",
+    "accessedAt": "2026-11-14",
+    "notes": "台北捷運系統路線圖、悠遊卡乘車優惠與景點接駁建議。"
+  },
+  {
+    "id": "source-tat-thailand",
+    "name": "泰國觀光局官方網站 (Tourism Authority of Thailand - TAT)",
+    "url": "https://www.wisithailand.com/",
+    "type": "政府觀光機關",
+    "accessedAt": "2026-11-14",
+    "notes": "曼谷市區旅遊政策、文化禮儀、美食介紹與旅遊安全提示。"
+  },
+  {
+    "id": "source-bangkok-grand-palace",
+    "name": "泰國王室宮務處 曼谷大皇宮參觀指引 (The Grand Palace Bangkok - Bureau of the Royal Household)",
+    "url": "https://www.royalgrandpalace.th/en/home",
+    "type": "景點官方網站",
+    "accessedAt": "2026-11-14",
+    "notes": "大皇宮與玉佛寺服裝規定、門票售票規範及開放日期。"
+  },
+  {
+    "id": "source-bangkok-bts",
+    "name": "曼谷大眾運輸系統 (BTS Skytrain Official)",
+    "url": "https://www.bts.co.th/eng/",
+    "type": "官方交通網站",
+    "accessedAt": "2026-11-14",
+    "notes": "BTS 輕軌系統路線、悠遊兔卡票價及恰圖恰週末市集站點說明。"
+  }
+];
+    const imageCredits = [
+  {
+    "id": "credit-dest-kyoto",
+    "file": "./images/destinations/kyoto.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80",
+    "title": "京都經典古城與五重塔街景",
+    "author": "Sora Sagano",
+    "sourceUrl": "https://unsplash.com/photos/Dvs08l-KfsQ",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License (允許免費公開展示與修改)",
+    "usagePermission": "verified",
+    "alt": "京都八坂塔古老街區日落"
+  },
+  {
+    "id": "credit-dest-taipei",
+    "file": "./images/destinations/taipei.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=1200&q=80",
+    "title": "台北101與現代城市天際線",
+    "author": "Thomas Tucker",
+    "sourceUrl": "https://unsplash.com/photos/au3CYbdJ6CU",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License (允許免費公開展示與修改)",
+    "usagePermission": "verified",
+    "alt": "台北信義區天際線與台北101夜景"
+  },
+  {
+    "id": "credit-dest-bangkok",
+    "file": "./images/destinations/bangkok.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80",
+    "title": "曼谷鄭王廟與昭披耶河黃昏景緻",
+    "author": "Aleksandar Pasaric",
+    "sourceUrl": "https://unsplash.com/photos/1508009603885-50cf7c579365",
+    "sourceType": "免費商用圖庫 (Pexels / Unsplash)",
+    "license": "Unsplash / Pexels License (免費公開展示)",
+    "usagePermission": "verified",
+    "alt": "曼谷金碧輝煌的歷史寺廟群與水岸"
+  },
+  {
+    "id": "credit-attr-kyoto-kinkakuji",
+    "file": "./images/attractions/kyoto-kinkakuji.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=900&q=80",
+    "title": "京都鹿苑寺金閣舍利殿與鏡湖池",
+    "author": "Su San Lee",
+    "sourceUrl": "https://unsplash.com/photos/g95Dq93Wb-w",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "京都金閣寺倒映在湖水中的金碧輝煌景色"
+  },
+  {
+    "id": "credit-attr-kyoto-fushimi",
+    "file": "./images/attractions/kyoto-fushimi.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1478436127897-769e00d0c715?auto=format&fit=crop&w=900&q=80",
+    "title": "伏見稻荷大社千本鳥居步道",
+    "author": "David Emrich",
+    "sourceUrl": "https://unsplash.com/photos/F6-U5fGAOik",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "朱紅色千本鳥居構成的長廊步道"
+  },
+  {
+    "id": "credit-attr-kyoto-kiyomizu",
+    "file": "./images/attractions/kyoto-kiyomizu.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=900&q=80",
+    "title": "音羽山清水寺木造懸空舞台",
+    "author": "Susanne Nilsson",
+    "sourceUrl": "https://unsplash.com/photos/r941zZflwJA",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "清水寺依山而建的木構大舞台與遠山"
+  },
+  {
+    "id": "credit-attr-kyoto-arashiyama",
+    "file": "./images/attractions/kyoto-arashiyama.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=900&q=80",
+    "title": "嵐山嵯峨野竹林小徑",
+    "author": "Bantersnaps",
+    "sourceUrl": "https://unsplash.com/photos/3tlAumtiLR4",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "高聳青翠竹林幽靜小路"
+  },
+  {
+    "id": "credit-attr-taipei-101",
+    "file": "./images/attractions/taipei-101.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1538356262335-51b68a735072?auto=format&fit=crop&w=900&q=80",
+    "title": "台北101大樓仰望全貌",
+    "author": "Timo Volz",
+    "sourceUrl": "https://unsplash.com/photos/dpUvW8g1hXg",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "台北101摩天大樓壯麗外觀"
+  },
+  {
+    "id": "credit-attr-taipei-palace",
+    "file": "./images/attractions/taipei-palace.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    "title": "國立故宮博物院傳統宮殿建築",
+    "author": "Lisanto ???",
+    "sourceUrl": "https://unsplash.com/photos/1563245372-f21724e3856d",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "台北外雙溪國立故宮博物院巍峨宮殿主樓"
+  },
+  {
+    "id": "credit-attr-taipei-elephant",
+    "file": "./images/attractions/taipei-elephant.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1470004914212-259bd0cfcbac?auto=format&fit=crop&w=900&q=80",
+    "title": "象山六巨石俯瞰台北夕陽夜景",
+    "author": "Froylan Gomez",
+    "sourceUrl": "https://unsplash.com/photos/1470004914212",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "從象山遠眺台北101與台北市璀璨市景"
+  },
+  {
+    "id": "credit-attr-taipei-shilin",
+    "file": "./images/attractions/taipei-shilin.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=80",
+    "title": "士林夜市與台灣街頭小吃攤位",
+    "author": "Vernon Raineil Cenzon",
+    "sourceUrl": "https://unsplash.com/photos/1570197788417",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "熱鬧喧騰的台北觀光夜市小吃街燈光與攤商"
+  },
+  {
+    "id": "credit-attr-bangkok-palace",
+    "file": "./images/attractions/bangkok-palace.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1563492065599-3580f777d662?auto=format&fit=crop&w=900&q=80",
+    "title": "曼谷大皇宮金色佛塔與玉佛寺建築",
+    "author": "Andreas M",
+    "sourceUrl": "https://unsplash.com/photos/1563492065599",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "大皇宮奢華雕刻金色尖頂佛塔群"
+  },
+  {
+    "id": "credit-attr-bangkok-watarun",
+    "file": "./images/attractions/bangkok-watarun.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80",
+    "title": "鄭王廟黎明寺大乘舍利塔瓷片雕花",
+    "author": "Mathew Schwartz",
+    "sourceUrl": "https://unsplash.com/photos/1528181304800",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "立於湄南河畔的鄭王廟白色巴普朗尖塔"
+  },
+  {
+    "id": "credit-attr-bangkok-chatuchak",
+    "file": "./images/attractions/bangkok-chatuchak.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
+    "title": "恰圖恰週末市集特色手工與服飾攤位",
+    "author": "Adrien Olichon",
+    "sourceUrl": "https://unsplash.com/photos/1555396273",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "恰圖恰市集熙攘往來的人潮與色彩繽紛的手工藝品"
+  },
+  {
+    "id": "credit-attr-bangkok-river",
+    "file": "./images/attractions/bangkok-river.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=900&q=80",
+    "title": "昭披耶河水上交通船穿梭曼谷市心",
+    "author": "Norbert Braun",
+    "sourceUrl": "https://unsplash.com/photos/1506665531195",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "水上長尾船與觀光渡輪在昭披耶河面上激起浪花"
+  },
+  {
+    "id": "credit-food-kyoto-matcha",
+    "file": "./images/food/kyoto-matcha.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=900&q=80",
+    "title": "宇治頂級抹茶白玉聖代與茶筅",
+    "author": "Alice Pasqual",
+    "sourceUrl": "https://unsplash.com/photos/1536256263959",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "濃郁鮮綠宇治抹茶甜品與紅豆白玉"
+  },
+  {
+    "id": "credit-food-kyoto-kaiseki",
+    "file": "./images/food/kyoto-kaiseki.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=80",
+    "title": "京都傳統京懷石精緻時令料理",
+    "author": "Fumikazu Sato",
+    "sourceUrl": "https://unsplash.com/photos/1579871494447",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "典雅漆器裝盛的當季京都懷石小料理"
+  },
+  {
+    "id": "credit-food-taipei-beefnoodles",
+    "file": "./images/food/taipei-beefnoodles.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80",
+    "title": "台灣紅燒半筋半肉牛肉麵",
+    "author": "Mink Mingle",
+    "sourceUrl": "https://unsplash.com/photos/1569718212165",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "大塊燉牛腱肉、濃郁紅燒湯頭與青江菜麵碗"
+  },
+  {
+    "id": "credit-food-taipei-xiaolongbao",
+    "file": "./images/food/taipei-xiaolongbao.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=900&q=80",
+    "title": "熱氣蒸騰的鼎泰豐風格現蒸小籠包",
+    "author": "Charles Deluvio",
+    "sourceUrl": "https://unsplash.com/photos/1541696432",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "竹蒸籠中薄皮多汁熱騰騰的小籠湯包"
+  },
+  {
+    "id": "credit-food-bangkok-padthai",
+    "file": "./images/food/bangkok-padthai.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=900&q=80",
+    "title": "泰式鮮蝦炒金邊粉 Pad Thai",
+    "author": "Marek Studzinski",
+    "sourceUrl": "https://unsplash.com/photos/1559847844",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "佐檸檬角、花生碎與肥美大蝦的泰式炒河粉"
+  },
+  {
+    "id": "credit-food-bangkok-mangorice",
+    "file": "./images/food/bangkok-mangorice.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
+    "title": "曼谷經典香甜椰汁芒果糯米飯",
+    "author": "Shashi Chaturvedula",
+    "sourceUrl": "https://unsplash.com/photos/1596797038530",
+    "sourceType": "免費商用圖庫 (Unsplash)",
+    "license": "Unsplash License",
+    "usagePermission": "verified",
+    "alt": "新鮮金黃芒果切片搭配淋上濃稠椰漿的糯米飯"
+  }
+];
+
+    // ================= LocalStorage 收藏自訂 Hook =================
+    const STORAGE_KEY = 'gowonder_favorites_v1';
+    function useFavorites() {
+      const getInitial = () => {
+        try {
+          const saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) {
+            const parsed = JSON.parse(saved);
+            return {
+              destinations: Array.isArray(parsed.destinations) ? parsed.destinations : [],
+              attractions: Array.isArray(parsed.attractions) ? parsed.attractions : []
+            };
+          }
+        } catch (e) {}
+        return { destinations: [], attractions: [] };
+      };
+
+      const [favorites, setFavorites] = useState(getInitial);
+
+      useEffect(() => {
+        const sync = () => setFavorites(getInitial());
+        window.addEventListener('storage', sync);
+        window.addEventListener('gowonder_sync', sync);
+        return () => {
+          window.removeEventListener('storage', sync);
+          window.removeEventListener('gowonder_sync', sync);
+        };
+      }, []);
+
+      const save = (updated) => {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+          setFavorites(updated);
+          window.dispatchEvent(new Event('gowonder_sync'));
+        } catch (e) {}
+      };
+
+      const isDestinationFavorite = (id) => favorites.destinations.includes(id);
+      const isAttractionFavorite = (id) => favorites.attractions.includes(id);
+
+      const toggleDestinationFavorite = (id) => {
+        const exists = favorites.destinations.includes(id);
+        const updated = {
+          ...favorites,
+          destinations: exists ? favorites.destinations.filter(x => x !== id) : [...favorites.destinations, id]
+        };
+        save(updated);
+      };
+
+      const toggleAttractionFavorite = (id) => {
+        const exists = favorites.attractions.includes(id);
+        const updated = {
+          ...favorites,
+          attractions: exists ? favorites.attractions.filter(x => x !== id) : [...favorites.attractions, id]
+        };
+        save(updated);
+      };
+
+      const clearAllFavorites = () => {
+        save({ destinations: [], attractions: [] });
+      };
+
+      const totalCount = favorites.destinations.length + favorites.attractions.length;
+
+      return {
+        favorites,
+        totalCount,
+        isDestinationFavorite,
+        isAttractionFavorite,
+        toggleDestinationFavorite,
+        toggleAttractionFavorite,
+        clearAllFavorites
+      };
+    }
+
+    // ================= 共用 UI 元件 =================
+    function Navbar({ currentRoute, totalCount }) {
+      const [open, setOpen] = useState(false);
+
+      return (
+        <header className="navbar">
+          <div className="container navbar-container">
+            <a href="#/" className="brand-logo" onClick={() => setOpen(false)}>
+              <div className="brand-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="#FFF8ED" />
+                </svg>
+              </div>
+              <div className="brand-text">
+                <span className="brand-name">Go<span>Wonder</span></span>
+                <span className="brand-tagline">Explore More. Travel Better.</span>
+              </div>
+            </a>
+
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setOpen(!open)}
+              aria-label="選單開關"
+            >
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
+
+            <nav>
+              <ul className={"nav-links " + (open ? 'open' : '')}>
+                <li>
+                  <a
+                    href="#/"
+                    className={"nav-link " + (currentRoute === '' || currentRoute === '/' ? 'active' : '')}
+                    onClick={() => setOpen(false)}
+                  >
+                    首頁 Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#/explore"
+                    className={"nav-link " + (currentRoute.startsWith('/explore') ? 'active' : '')}
+                    onClick={() => setOpen(false)}
+                  >
+                    探索城市 Explore
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#/favorites"
+                    className={"nav-link " + (currentRoute.startsWith('/favorites') ? 'active' : '')}
+                    onClick={() => setOpen(false)}
+                  >
+                    我的收藏
+                    {totalCount > 0 && <span className="nav-badge">{totalCount}</span>}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#/sources-credits"
+                    className={"nav-link " + (currentRoute.startsWith('/sources-credits') ? 'active' : '')}
+                    onClick={() => setOpen(false)}
+                  >
+                    資料與授權 Credits
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="footer">
+          <div className="container">
+            <div className="footer-grid">
+              <div className="footer-brand">
+                <h4>Go<span>Wonder</span> Travel Guide</h4>
+                <p style={{ color: 'var(--color-secondary)', fontWeight: 600, marginBottom: '8px' }}>
+                  Explore More. Travel Better.
+                </p>
+                <p>
+                  專為自由行旅客量身打造的現代旅遊指南。提供活潑明亮的旅遊靈感、嚴謹的官方查證依據與透明的授權保證。
+                </p>
+              </div>
+
+              <div className="footer-col">
+                <h5>精選城市</h5>
+                <ul className="footer-links">
+                  <li><a href="#/destination/kyoto">日本京都 Kyoto</a></li>
+                  <li><a href="#/destination/taipei">台灣台北 Taipei</a></li>
+                  <li><a href="#/destination/bangkok">泰國曼谷 Bangkok</a></li>
+                  <li><a href="#/explore">瀏覽所有城市 →</a></li>
+                </ul>
+              </div>
+
+              <div className="footer-col">
+                <h5>功能導覽</h5>
+                <ul className="footer-links">
+                  <li><a href="#/">首頁指南</a></li>
+                  <li><a href="#/explore">城市搜尋與篩選</a></li>
+                  <li><a href="#/favorites">我的收藏庫</a></li>
+                  <li><a href="#/sources-credits">資料來源與圖片版權</a></li>
+                </ul>
+              </div>
+
+              <div className="footer-col">
+                <h5>規範與透明度</h5>
+                <ul className="footer-links">
+                  <li><a href="#/sources-credits">100% 官方資料查證</a></li>
+                  <li><a href="#/sources-credits">Verified 商用授權</a></li>
+                  <li><span style={{ fontSize: '0.85rem', color: '#A0AEC0' }}>嚴格遵循 AGENTS.md 開發規範</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="footer-bottom">
+              <p>© 2026 GoWonder Travel Guide. All rights reserved.</p>
+              <p>Designed with <span style={{ color: 'var(--color-primary)' }}>♥</span> for independent travelers.</p>
+            </div>
+          </div>
+        </footer>
+      );
+    }
+
+    function DestinationCard({ destination, isFav, onToggleFav }) {
+      const img = destination.coverImageUrl || destination.coverImage;
+      return (
+        <article className="destination-card">
+          <div className="card-image-box">
+            <img src={img} alt={destination.name} loading="lazy" />
+            <span className="card-badge-country">📍 {destination.country} • {destination.countryCode}</span>
+            <button
+              className={"fav-btn " + (isFav ? 'is-active' : '')}
+              onClick={(e) => { e.preventDefault(); onToggleFav(destination.id); }}
+              title={isFav ? "取消收藏" : "加入收藏"}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill={isFav ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </button>
+          </div>
+          <div className="card-content">
+            <div className="card-header-title">
+              <h3>{destination.name}</h3>
+              <span className="card-en-name">{destination.englishName}</span>
+            </div>
+            <p className="card-description">{destination.description}</p>
+            {destination.tags && (
+              <div className="card-tags">
+                {destination.tags.map((t, idx) => <span key={idx} className="tag-pill">#{t}</span>)}
+              </div>
+            )}
+            <div className="card-footer">
+              <span className="card-stats-text">
+                🏛️ {destination.attractionIds ? destination.attractionIds.length : 0} 景點 • 🍜 {destination.foodIds ? destination.foodIds.length : 0} 美食
+              </span>
+              <a href={"#/destination/" + destination.id} className="btn btn-outline btn-sm">
+                深入探索 ➜
+              </a>
+            </div>
+          </div>
+        </article>
+      );
+    }
+
+    function AttractionCard({ attraction, isFav, onToggleFav }) {
+      const img = attraction.imageUrl || attraction.image;
+      return (
+        <article className="attraction-card">
+          <div className="attraction-image-box">
+            <img src={img} alt={attraction.name} loading="lazy" />
+            <span className="attraction-category">{attraction.category}</span>
+            <button
+              className={"fav-btn " + (isFav ? 'is-active' : '')}
+              onClick={(e) => { e.preventDefault(); onToggleFav(attraction.id); }}
+              title={isFav ? "取消收藏" : "加入收藏"}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill={isFav ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </button>
+          </div>
+          <div className="attraction-body">
+            <div className="attraction-title">
+              <h4>{attraction.name}</h4>
+              <span className="en-sub">{attraction.englishName}</span>
+            </div>
+            <p className="attraction-desc">{attraction.description}</p>
+            {attraction.highlights && (
+              <ul className="attraction-highlights">
+                {attraction.highlights.map((h, i) => (
+                  <li key={i}><span style={{ color: 'var(--color-primary)' }}>✦</span> {h}</li>
+                ))}
+              </ul>
+            )}
+            <div className="attraction-meta">
+              {attraction.openingHours && (
+                <div className="meta-item"><span>🕒</span><span><strong>營業時間：</strong>{attraction.openingHours}</span></div>
+              )}
+              {attraction.address && (
+                <div className="meta-item"><span>📍</span><span><strong>地址：</strong>{attraction.address}</span></div>
+              )}
+            </div>
+          </div>
+        </article>
+      );
+    }
+
+    function FoodCard({ foodItem }) {
+      const img = foodItem.imageUrl || foodItem.image;
+      return (
+        <article className="food-card">
+          <div className="food-image-box">
+            <img src={img} alt={foodItem.name} loading="lazy" />
+            {foodItem.priceRange && <span className="food-price-badge">💰 {foodItem.priceRange}</span>}
+          </div>
+          <div className="food-body">
+            <div className="food-header">
+              <div>
+                <h4 className="food-name">{foodItem.name}</h4>
+                <span style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>{foodItem.englishName}</span>
+              </div>
+              <span className="food-category">{foodItem.category}</span>
+            </div>
+            <p className="food-desc">{foodItem.description}</p>
+            {foodItem.recommendedSpots && (
+              <div className="food-spots">
+                <strong>推薦品嚐處：</strong> {foodItem.recommendedSpots}
+              </div>
+            )}
+          </div>
+        </article>
+      );
+    }
+
+    // ================= 頁面模組 =================
+    function HomePage({ favHook }) {
+      return (
+        <div>
+          {/* Hero */}
+          <section className="hero">
+            <div className="container">
+              <div className="hero-grid">
+                <div className="hero-content">
+                  <div className="hero-badge">
+                    <span>✈️</span>
+                    <span>2026 自由行全新旅遊指南</span>
+                  </div>
+                  <h1 className="hero-title">
+                    發現城市精彩，<br />
+                    <span className="highlight">出發，遇見不一樣的風景！</span>
+                  </h1>
+                  <p className="hero-description">
+                    <strong>GoWonder Travel Guide</strong> 結合活潑明亮的旅遊雜誌風格與嚴謹查證的官方資訊。無論是古都京都的禪風古寺、台北夜市的熱騰鑊氣，還是曼谷湄南河畔的金碧佛塔，帶你輕鬆收藏專屬的旅行地圖。
+                  </p>
+                  <div className="hero-actions">
+                    <a href="#/explore" className="btn btn-primary">
+                      開始探索目的地 ➜
+                    </a>
+                    <a href="#/favorites" className="btn btn-secondary">
+                      我的收藏庫 ({favHook.totalCount})
+                    </a>
+                  </div>
+                  <div className="hero-stats">
+                    <div className="stat-item"><span className="stat-number">3+</span><span className="stat-label">首波熱門城市</span></div>
+                    <div className="stat-item"><span className="stat-number">12+</span><span className="stat-label">精選必訪景點</span></div>
+                    <div className="stat-item"><span className="stat-number">100%</span><span className="stat-label">官方嚴謹查證</span></div>
+                  </div>
+                </div>
+                <div className="hero-visual">
+                  <div className="hero-card-stack">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=80" alt="京都八坂塔" />
+                    <div className="hero-card-overlay">
+                      <span className="badge badge-secondary" style={{ marginBottom: '8px' }}>本季推薦 • 日本京都</span>
+                      <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem' }}>穿梭於千本鳥居與嵐山竹林的東洋詩篇</h3>
+                    </div>
+                  </div>
+                  <div className="hero-floating-pill">
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: 'var(--color-teal)' }} />
+                    <span>隨點即藏 • 離線隨身好幫手</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 三大亮點 */}
+          <section style={{ padding: '48px 0', backgroundColor: '#FFFFFF', borderBottom: '1px solid var(--color-border)' }}>
+            <div className="container">
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '28px' }}>
+                <div style={{ display: 'flex', gap: '16px' }}>
+                  <div style={{ fontSize: '2rem', padding: '12px', borderRadius: '16px', backgroundColor: 'var(--color-primary-light)' }}>📖</div>
+                  <div>
+                    <h4 style={{ marginBottom: '6px' }}>100% 官方資料查證</h4>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)' }}>政府觀光局與寺廟官網公告，開放時間、交通真實精確。</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '16px' }}>
+                  <div style={{ fontSize: '2rem', padding: '12px', borderRadius: '16px', backgroundColor: 'var(--color-teal-light)' }}>🗺️</div>
+                  <div>
+                    <h4 style={{ marginBottom: '6px' }}>自由行行程推薦</h4>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)' }}>精心規劃三日遊經典散步動線，省去熬夜爬文排行程的煩惱。</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '16px' }}>
+                  <div style={{ fontSize: '2rem', padding: '12px', borderRadius: '16px', backgroundColor: 'var(--color-secondary-light)' }}>⭐</div>
+                  <div>
+                    <h4 style={{ marginBottom: '6px' }}>一鍵收藏與離線保存</h4>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)' }}>LocalStorage 本機儲存，喜歡的城市與私房景點隨手收藏。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 推薦城市 */}
+          <section style={{ padding: '64px 0 72px' }}>
+            <div className="container">
+              <div className="section-header">
+                <span className="section-tag">POPULAR DESTINATIONS</span>
+                <h2>熱門精選城市</h2>
+                <p>精心挑選亞洲最具特色之自由行勝地，沉浸於古都文化、繁華都會與南洋風情。</p>
+              </div>
+              <div className="destination-grid">
+                {destinations.map(d => (
+                  <DestinationCard
+                    key={d.id}
+                    destination={d}
+                    isFav={favHook.isDestinationFavorite(d.id)}
+                    onToggleFav={favHook.toggleDestinationFavorite}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* 焦點名勝 */}
+          <section style={{ padding: '64px 0', backgroundColor: '#FFFFFF', borderTop: '1px solid var(--color-border)' }}>
+            <div className="container">
+              <div className="section-header">
+                <span className="section-tag">TOP ATTRACTIONS</span>
+                <h2>不可錯過的標誌性名勝</h2>
+                <p>親身走進世界文化遺產與壯麗自然風光，隨時點擊愛心收藏進您的旅行口袋名單。</p>
+              </div>
+              <div className="attraction-grid">
+                {attractions.slice(0, 3).map(a => (
+                  <AttractionCard
+                    key={a.id}
+                    attraction={a}
+                    isFav={favHook.isAttractionFavorite(a.id)}
+                    onToggleFav={favHook.toggleAttractionFavorite}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* 在地美食 */}
+          <section style={{ padding: '64px 0 72px' }}>
+            <div className="container">
+              <div className="section-header">
+                <span className="section-tag">LOCAL TASTE</span>
+                <h2>旅途中的味蕾盛宴</h2>
+                <p>舌尖上的文化巡禮，品嚐每一座城市最道地、最具代表性的美味靈魂。</p>
+              </div>
+              <div className="food-grid">
+                {food.slice(0, 3).map(f => (
+                  <FoodCard key={f.id} foodItem={f} />
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+      );
+    }
+
+    function ExplorePage({ favHook }) {
+      const [term, setTerm] = useState('');
+      const [country, setCountry] = useState('all');
+      const [tag, setTag] = useState('all');
+
+      const countries = Array.from(new Set(destinations.map(d => d.country)));
+      const tags = Array.from(new Set(destinations.flatMap(d => d.tags || [])));
+
+      const filtered = destinations.filter(d => {
+        const t = term.trim().toLowerCase();
+        const mKey = !t || d.name.toLowerCase().includes(t) || d.englishName.toLowerCase().includes(t) || d.country.toLowerCase().includes(t);
+        const mCountry = country === 'all' || d.country === country;
+        const mTag = tag === 'all' || (d.tags && d.tags.includes(tag));
+        return mKey && mCountry && mTag;
+      });
+
+      return (
+        <div className="explore-page">
+          <section className="page-banner">
+            <div className="container">
+              <span className="badge badge-primary" style={{ marginBottom: '10px' }}>DESTINATION DIRECTORY</span>
+              <h1 className="page-banner-title">探索所有旅遊目的地</h1>
+              <p className="page-banner-subtitle">搜尋熱門城市、依國家與體驗風格精準篩選。每座城市皆配有詳細景點、美食與實用三日遊行程！</p>
+            </div>
+          </section>
+
+          <div className="container" style={{ paddingBottom: '80px' }}>
+            <div className="search-filter-card">
+              <div className="search-input-wrapper">
+                <svg className="search-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="搜尋城市名稱（例：京都、Taipei、曼谷）..."
+                  value={term}
+                  onChange={(e) => setTerm(e.target.value)}
+                />
+                {term && (
+                  <button className="search-clear-btn" onClick={() => setTerm('')}>✕</button>
+                )}
+              </div>
+
+              <div className="filter-groups">
+                <div className="filter-row">
+                  <span className="filter-label">國家地區:</span>
+                  <div className="filter-pills">
+                    <button className={"filter-pill " + (country === 'all' ? 'active' : '')} onClick={() => setCountry('all')}>全部地區</button>
+                    {countries.map(c => (
+                      <button key={c} className={"filter-pill " + (country === c ? 'active' : '')} onClick={() => setCountry(c)}>{c}</button>
+                    ))}
+                  </div>
+                </div>
+                <div className="filter-row">
+                  <span className="filter-label">特色體驗:</span>
+                  <div className="filter-pills">
+                    <button className={"filter-pill " + (tag === 'all' ? 'active' : '')} onClick={() => setTag('all')}>全部特色</button>
+                    {tags.map(t => (
+                      <button key={t} className={"filter-pill " + (tag === t ? 'active' : '')} onClick={() => setTag(t)}>#{t}</button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px' }}>
+              <p style={{ margin: 0, fontWeight: 600 }}>找到 <strong style={{ color: 'var(--color-primary)' }}>{filtered.length}</strong> 座精彩城市</p>
+              {(country !== 'all' || tag !== 'all' || term) && (
+                <button className="btn btn-secondary btn-sm" onClick={() => { setTerm(''); setCountry('all'); setTag('all'); }}>🔄 重設篩選</button>
+              )}
+            </div>
+
+            {filtered.length > 0 ? (
+              <div className="destination-grid">
+                {filtered.map(d => (
+                  <DestinationCard
+                    key={d.id}
+                    destination={d}
+                    isFav={favHook.isDestinationFavorite(d.id)}
+                    onToggleFav={favHook.toggleDestinationFavorite}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="empty-state">
+                <div className="empty-icon">🔍</div>
+                <h3>找不到符合條件的目的地</h3>
+                <p>請檢查關鍵字或清除篩選條件重新搜尋。</p>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    function DestinationDetailPage({ id, favHook }) {
+      const dest = destinations.find(d => d.id === id);
+      const [category, setCategory] = useState('all');
+
+      if (!dest) {
+        return (
+          <div className="container" style={{ padding: '80px 20px', textAlign: 'center' }}>
+            <div className="empty-state">
+              <h2>找不到此城市旅遊資訊</h2>
+              <a href="#/explore" className="btn btn-primary" style={{ marginTop: '20px' }}>返回目的地清單</a>
+            </div>
+          </div>
+        );
+      }
+
+      const destAttrs = attractions.filter(a => dest.attractionIds.includes(a.id));
+      const destFood = food.filter(f => dest.foodIds.includes(f.id));
+      const destSources = sources.filter(s => dest.sourceIds.includes(s.id));
+      const categories = Array.from(new Set(destAttrs.map(a => a.category)));
+      const filteredAttrs = category === 'all' ? destAttrs : destAttrs.filter(a => a.category === category);
+      const isFav = favHook.isDestinationFavorite(dest.id);
+
+      return (
+        <div>
+          <section className="detail-hero">
+            <img src={dest.coverImageUrl || dest.coverImage} alt={dest.name} className="detail-hero-bg" />
+            <div className="detail-hero-overlay" />
+            <div className="container detail-hero-content">
+              <a href="#/explore" className="detail-back-link">← 返回城市列表</a>
+              <div className="detail-header-row">
+                <div className="detail-title-group">
+                  <span className="badge badge-secondary" style={{ marginBottom: '10px' }}>📍 {dest.country} • {dest.countryCode}</span>
+                  <h1>{dest.name}</h1>
+                  <span className="en-title">{dest.englishName}</span>
+                  {dest.slogan && <p className="detail-slogan">{dest.slogan}</p>}
+                </div>
+                <button
+                  className={"btn " + (isFav ? 'btn-secondary' : 'btn-primary')}
+                  onClick={() => favHook.toggleDestinationFavorite(dest.id)}
+                  style={{ padding: '12px 24px' }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill={isFav ? "#E53E3E" : "none"} stroke={isFav ? "#E53E3E" : "currentColor"} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                  {isFav ? '已收藏此城市' : '收藏此城市'}
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <div className="container">
+            <div className="detail-quick-stats">
+              <div className="quick-stat-box">
+                <div className="quick-stat-icon orange">🏛️</div>
+                <div className="quick-stat-info"><h5>精選景點</h5><p>{destAttrs.length} 處必訪名勝</p></div>
+              </div>
+              <div className="quick-stat-box">
+                <div className="quick-stat-icon teal">🍜</div>
+                <div className="quick-stat-info"><h5>在地美食</h5><p>{destFood.length} 款代表風味</p></div>
+              </div>
+              <div className="quick-stat-box">
+                <div className="quick-stat-icon blue">📅</div>
+                <div className="quick-stat-info"><h5>自由行行程</h5><p>{dest.itinerary ? dest.itinerary.length + ' 日規劃' : '經典建議'}</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="container" style={{ paddingBottom: '80px' }}>
+            <section className="detail-section">
+              <h2 className="detail-section-title"><span className="section-icon">🏙️</span>關於 {dest.name}</h2>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '28px' }}>{dest.description}</p>
+              {dest.travelTips && (
+                <div className="travel-tips-card">
+                  <h4 style={{ marginBottom: '16px' }}>💡 自由行行前實用指南</h4>
+                  <div className="tip-block"><div className="tip-block-title">🌸 最佳旅行時節</div><p>{dest.travelTips.bestSeason}</p></div>
+                  <div className="tip-block"><div className="tip-block-title">🚇 當地交通建議</div><p>{dest.travelTips.transitAdvice}</p></div>
+                  <div className="tip-block"><div className="tip-block-title">⛩️ 在地禮儀與規範</div><p>{dest.travelTips.localEtiquette}</p></div>
+                </div>
+              )}
+            </section>
+
+            <section className="detail-section">
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
+                <h2 className="detail-section-title" style={{ margin: 0 }}><span className="section-icon">🏯</span>必訪名勝景點 ({destAttrs.length})</h2>
+                <div className="filter-pills">
+                  <button className={"filter-pill " + (category === 'all' ? 'active' : '')} onClick={() => setCategory('all')}>全部分類</button>
+                  {categories.map(c => (
+                    <button key={c} className={"filter-pill " + (category === c ? 'active' : '')} onClick={() => setCategory(c)}>{c}</button>
+                  ))}
+                </div>
+              </div>
+              <div className="attraction-grid">
+                {filteredAttrs.map(a => (
+                  <AttractionCard
+                    key={a.id}
+                    attraction={a}
+                    isFav={favHook.isAttractionFavorite(a.id)}
+                    onToggleFav={favHook.toggleAttractionFavorite}
+                  />
+                ))}
+              </div>
+            </section>
+
+            <section className="detail-section">
+              <h2 className="detail-section-title"><span className="section-icon">🍲</span>在地代表美食 ({destFood.length})</h2>
+              <div className="food-grid">
+                {destFood.map(f => <FoodCard key={f.id} foodItem={f} />)}
+              </div>
+            </section>
+
+            {dest.itinerary && (
+              <section className="detail-section">
+                <h2 className="detail-section-title"><span className="section-icon">🗺️</span>{dest.name} 推薦三日行程</h2>
+                {dest.itinerary.map(plan => (
+                  <div key={plan.day} className="itinerary-card">
+                    <span className="itinerary-day-badge">Day {plan.day}</span>
+                    <h3 className="itinerary-title">{plan.title}</h3>
+                    <ul className="itinerary-activities">
+                      {plan.activities.map((act, i) => <li key={i}>{act}</li>)}
+                    </ul>
+                  </div>
+                ))}
+              </section>
+            )}
+
+            <section className="detail-section" style={{ borderBottom: 'none' }}>
+              <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-md)', padding: '24px' }}>
+                <h4 style={{ marginBottom: '12px' }}>🔍 資訊來源與圖片備註</h4>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                  {destSources.map(s => (
+                    <li key={s.id} style={{ marginBottom: '8px' }}>
+                      <span className="badge badge-verified" style={{ marginRight: '8px' }}>{s.type}</span>
+                      <a href={s.url} target="_blank" rel="noreferrer" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>{s.name} ↗</a>
+                    </li>
+                  ))}
+                </ul>
+                <a href="#/sources-credits" style={{ fontSize: '0.88rem', color: 'var(--color-teal)', fontWeight: 700, display: 'inline-block', marginTop: '12px' }}>
+                  查看全站完整資料來源與授權清單 →
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      );
+    }
+
+    function FavoritesPage({ favHook }) {
+      const [tab, setTab] = useState('all');
+      const favDests = destinations.filter(d => favHook.favorites.destinations.includes(d.id));
+      const favAttrs = attractions.filter(a => favHook.favorites.attractions.includes(a.id));
+
+      return (
+        <div>
+          <section className="page-banner">
+            <div className="container">
+              <span className="badge badge-primary" style={{ marginBottom: '10px' }}>MY WISHLIST</span>
+              <h1 className="page-banner-title">我的旅行收藏庫</h1>
+              <p className="page-banner-subtitle">保存在瀏覽器 LocalStorage，重開視窗或離線檢閱也不會遺失！</p>
+            </div>
+          </section>
+
+          <div className="container" style={{ paddingBottom: '80px' }}>
+            {favHook.totalCount > 0 ? (
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '28px' }}>
+                  <div className="favorites-tabs" style={{ margin: 0, padding: 0, border: 'none' }}>
+                    <button className={"tab-btn " + (tab === 'all' ? 'active' : '')} onClick={() => setTab('all')}>全部收藏 ({favHook.totalCount})</button>
+                    <button className={"tab-btn " + (tab === 'dest' ? 'active' : '')} onClick={() => setTab('dest')}>收藏城市 ({favDests.length})</button>
+                    <button className={"tab-btn " + (tab === 'attr' ? 'active' : '')} onClick={() => setTab('attr')}>收藏景點 ({favAttrs.length})</button>
+                  </div>
+                  <button className="btn btn-secondary btn-sm" style={{ color: '#E53E3E' }} onClick={favHook.clearAllFavorites}>🗑️ 清空收藏</button>
+                </div>
+
+                {(tab === 'all' || tab === 'dest') && favDests.length > 0 && (
+                  <section style={{ marginBottom: '40px' }}>
+                    <h3 style={{ marginBottom: '20px' }}>📍 收藏的目的地 ({favDests.length})</h3>
+                    <div className="destination-grid">
+                      {favDests.map(d => (
+                        <DestinationCard
+                          key={d.id}
+                          destination={d}
+                          isFav={true}
+                          onToggleFav={favHook.toggleDestinationFavorite}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                )}
+
+                {(tab === 'all' || tab === 'attr') && favAttrs.length > 0 && (
+                  <section>
+                    <h3 style={{ marginBottom: '20px' }}>🏛️ 收藏的景點名勝 ({favAttrs.length})</h3>
+                    <div className="attraction-grid">
+                      {favAttrs.map(a => (
+                        <AttractionCard
+                          key={a.id}
+                          attraction={a}
+                          isFav={true}
+                          onToggleFav={favHook.toggleAttractionFavorite}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </div>
+            ) : (
+              <div className="empty-state">
+                <div className="empty-icon">🤍</div>
+                <h3>目前尚未有任何收藏</h3>
+                <p>探索時點擊卡片右上角愛心，即可將喜愛的城市或景點保存至此！</p>
+                <a href="#/explore" className="btn btn-primary">立即探索目的地 ➜</a>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    function SourcesCreditsPage() {
+      return (
+        <div>
+          <section className="page-banner">
+            <div className="container">
+              <span className="badge badge-teal" style={{ marginBottom: '10px' }}>TRANSPARENCY</span>
+              <h1 className="page-banner-title">資料來源與圖片授權聲明</h1>
+              <p className="page-banner-subtitle">全站文字引自官方權威旅遊機構，圖片皆具備正式商用授權許可。</p>
+            </div>
+          </section>
+
+          <div className="container" style={{ paddingBottom: '80px' }}>
+            <h2 style={{ fontSize: '1.6rem', marginBottom: '16px' }}>📖 官方文字資料來源 ({sources.length})</h2>
+            <div className="credits-table-wrapper" style={{ marginBottom: '48px' }}>
+              <table className="credits-table">
+                <thead>
+                  <tr>
+                    <th>資料名稱</th>
+                    <th>類型</th>
+                    <th>查閱日期</th>
+                    <th>原始網址</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sources.map(s => (
+                    <tr key={s.id}>
+                      <td><strong>{s.name}</strong><div style={{ fontSize: '0.8rem', color: '#718096' }}>{s.notes}</div></td>
+                      <td><span className="badge badge-teal">{s.type}</span></td>
+                      <td><code>{s.accessedAt}</code></td>
+                      <td><a href={s.url} target="_blank" rel="noreferrer" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>官方連結 ↗</a></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h2 style={{ fontSize: '1.6rem', marginBottom: '16px' }}>📷 圖片版權與授權清單 ({imageCredits.length})</h2>
+            <div className="credits-table-wrapper">
+              <table className="credits-table">
+                <thead>
+                  <tr>
+                    <th>預覽</th>
+                    <th>名稱</th>
+                    <th>攝影作者</th>
+                    <th>圖庫來源</th>
+                    <th>授權許可</th>
+                    <th>原始連結</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {imageCredits.map(c => (
+                    <tr key={c.id}>
+                      <td><img src={c.imageUrl || c.file} alt={c.title} className="credit-thumb" /></td>
+                      <td><strong>{c.title}</strong><div style={{ fontSize: '0.75rem', color: '#718096' }}>ID: {c.id}</div></td>
+                      <td><span style={{ color: 'var(--color-primary)', fontWeight: 600 }}>{c.author}</span></td>
+                      <td>{c.sourceType}</td>
+                      <td><span className="badge badge-verified">✓ {c.usagePermission}</span></td>
+                      <td><a href={c.sourceUrl} target="_blank" rel="noreferrer" style={{ color: 'var(--color-blue)', textDecoration: 'underline' }}>查看來源 ↗</a></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // ================= 主應用程式 =================
+    function App() {
+      const [route, setRoute] = useState(window.location.hash.replace(/^#/, '') || '/');
+      const favHook = useFavorites();
+
+      useEffect(() => {
+        const handleHashChange = () => {
+          const r = window.location.hash.replace(/^#/, '') || '/';
+          setRoute(r);
+          window.scrollTo(0, 0);
+        };
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+      }, []);
+
+      let pageComponent = <HomePage favHook={favHook} />;
+
+      if (route.startsWith('/explore')) {
+        pageComponent = <ExplorePage favHook={favHook} />;
+      } else if (route.startsWith('/destination/')) {
+        const destId = route.replace('/destination/', '');
+        pageComponent = <DestinationDetailPage id={destId} favHook={favHook} />;
+      } else if (route.startsWith('/favorites')) {
+        pageComponent = <FavoritesPage favHook={favHook} />;
+      } else if (route.startsWith('/sources-credits')) {
+        pageComponent = <SourcesCreditsPage />;
+      }
+
+      return (
+        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+          <Navbar currentRoute={route} totalCount={favHook.totalCount} />
+          <main style={{ flex: '1 0 auto' }}>
+            {pageComponent}
+          </main>
+          <Footer />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
