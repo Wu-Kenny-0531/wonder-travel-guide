@@ -326,7 +326,7 @@ export const attractions = [
     "openingHours": "木棧道開放時間依每日潮汐調整（退潮前後1.5至2小時開放，滿潮期間暫時關閉）",
     "address": "台中市清水區美堤街周邊",
     "image": "./images/attractions/taichung-gaomei.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1767630867135-5a7693b459bf?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-attr-taichung-gaomei"
     ],
@@ -350,7 +350,7 @@ export const attractions = [
     "openingHours": "各店家多為 11:00 - 19:00 (戶外街區全天開放散步)",
     "address": "台中市西區民生路368巷",
     "image": "./images/attractions/taichung-shenji.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1779079297902-2e4ba713a936?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-attr-taichung-shenji"
     ],

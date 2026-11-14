@@ -47,7 +47,7 @@ export const food = [
     "recommendedSpots": "林東芳牛肉麵、永康牛肉麵、劉山東牛肉麵",
     "priceRange": "NT$ 180 - NT$ 280",
     "image": "./images/food/taipei-beefnoodles.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1519077204685-ed90d0cc05b7?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-taipei-beefnoodles"
     ],
@@ -101,7 +101,7 @@ export const food = [
     "recommendedSpots": "Mae Varee 芒果糯米飯專賣店、Kor Panich",
     "priceRange": "THB 80 - THB 160",
     "image": "./images/food/bangkok-mangorice.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1705056508219-0aa0ceb16820?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-bangkok-mangorice"
     ],
@@ -119,7 +119,7 @@ export const food = [
     "recommendedSpots": "春水堂創始店（四維街）、茶明載波、吃茶三千",
     "priceRange": "NT$ 65 - NT$ 130",
     "image": "./images/food/taichung-bubbletea.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1751199956820-ecb919004024?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-taichung-bubbletea"
     ],
@@ -227,7 +227,7 @@ export const food = [
     "recommendedSpots": "南禪寺順正、奧丹清水（創業於1635年老舖）、總本家由良之助",
     "priceRange": "¥3,000 - ¥5,000",
     "image": "./images/food/kyoto-yudofu.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-kyoto-yudofu"
     ],
@@ -263,7 +263,7 @@ export const food = [
     "recommendedSpots": "金峰魯肉飯（南門市場）、小王煮瓜（米其林必比登推薦）、天天利美食坊",
     "priceRange": "NT$ 40 - NT$ 75",
     "image": "./images/food/taipei-luroufan.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1789296719187-829d74cc7711?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-taipei-luroufan"
     ],
@@ -299,7 +299,7 @@ export const food = [
     "recommendedSpots": "P'Aor 巨無霸龍蝦酸辣麵、Jeh O Chula（米其林必比登）、Thip Samai",
     "priceRange": "THB 150 - THB 350",
     "image": "./images/food/bangkok-tomyum.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1548946526-f69e2424cf45?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1563372529-b35a5220919f?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-bangkok-tomyum"
     ],
@@ -317,7 +317,7 @@ export const food = [
     "recommendedSpots": "恰圖恰市集街邊攤位、喬德夜市、考山路夜市熱煎攤",
     "priceRange": "THB 40 - THB 70",
     "image": "./images/food/bangkok-roti.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1575853121613-72ce1dd6979d?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-bangkok-roti"
     ],
@@ -335,7 +335,7 @@ export const food = [
     "recommendedSpots": "全安堂太陽餅博物館（自由路）、阿明師老太陽堂、魏清海太陽餅",
     "priceRange": "NT$ 45 - NT$ 60 / 塊",
     "image": "./images/food/taichung-suncake.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1782029680974-e07c93389f52?auto=format&fit=crop&w=900&q=80",
     "imageCreditIds": [
       "credit-food-taichung-suncake"
     ],

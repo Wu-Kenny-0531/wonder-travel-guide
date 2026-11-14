@@ -206,14 +206,14 @@ export const imageCredits = [
   {
     "id": "credit-food-taipei-beefnoodles",
     "file": "./images/food/taipei-beefnoodles.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1519077204685-ed90d0cc05b7?auto=format&fit=crop&w=900&q=80",
     "title": "台灣紅燒半筋半肉牛肉麵",
-    "author": "Mink Mingle",
-    "sourceUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80",
+    "author": "Masaaki Komori",
+    "sourceUrl": "https://images.unsplash.com/photo-1519077204685-ed90d0cc05b7?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "大塊燉牛腱肉、濃郁紅燒湯頭與青江菜麵碗"
+    "alt": "大塊燉牛腱肉、濃郁紅燒湯頭與手工麵條"
   },
   {
     "id": "credit-food-taipei-xiaolongbao",
@@ -242,14 +242,14 @@ export const imageCredits = [
   {
     "id": "credit-food-bangkok-mangorice",
     "file": "./images/food/bangkok-mangorice.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1705056508219-0aa0ceb16820?auto=format&fit=crop&w=900&q=80",
     "title": "曼谷經典香甜椰汁芒果糯米飯",
-    "author": "Shashi Chaturvedula",
-    "sourceUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
+    "author": "Unsplash Contributor",
+    "sourceUrl": "https://images.unsplash.com/photo-1705056508219-0aa0ceb16820?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "新鮮金黃芒果切片搭配淋上濃稠椰漿的糯米飯"
+    "alt": "黑盤上擺放金黃鮮切芒果片與香濃椰漿糯米飯"
   },
   {
     "id": "credit-dest-taichung",
@@ -278,26 +278,26 @@ export const imageCredits = [
   {
     "id": "credit-attr-taichung-gaomei",
     "file": "./images/attractions/taichung-gaomei.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1767630867135-5a7693b459bf?auto=format&fit=crop&w=900&q=80",
     "title": "高美濕地夕陽餘暉與海天一色",
-    "author": "Sean Oulashin",
-    "sourceUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    "author": "Intricate Explorer",
+    "sourceUrl": "https://images.unsplash.com/photo-1767630867135-5a7693b459bf?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "夕陽西下染紅的濕地水岸與金色倒影"
+    "alt": "高美濕地延伸至潮間帶深處的木棧道與夕陽"
   },
   {
     "id": "credit-attr-taichung-shenji",
     "file": "./images/attractions/taichung-shenji.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1779079297902-2e4ba713a936?auto=format&fit=crop&w=900&q=80",
     "title": "審計新村文創聚落手工藝與綠意老眷舍",
-    "author": "Prudence Earl",
-    "sourceUrl": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80",
+    "author": "Jeffrey Zhang",
+    "sourceUrl": "https://images.unsplash.com/photo-1779079297902-2e4ba713a936?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "老宿舍改建的文創手作市集與植栽街角"
+    "alt": "審計新村老屋綠樹掩映下的戶外文創手作市集"
   },
   {
     "id": "credit-attr-taichung-fengjia",
@@ -314,14 +314,14 @@ export const imageCredits = [
   {
     "id": "credit-food-taichung-bubbletea",
     "file": "./images/food/taichung-bubbletea.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1751199956820-ecb919004024?auto=format&fit=crop&w=900&q=80",
     "title": "台中發源經典黑糖珍珠鮮奶茶",
-    "author": "Rosalind Chang",
-    "sourceUrl": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=900&q=80",
+    "author": "Unsplash Contributor",
+    "sourceUrl": "https://images.unsplash.com/photo-1751199956820-ecb919004024?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "濃郁黑糖珍珠與香醇鮮奶調製的台灣經典珍奶"
+    "alt": "手中拿著一杯裝滿黑糖珍珠與香醇鮮奶的台灣珍珠奶茶"
   },
   {
     "id": "credit-food-taichung-miyahara",
@@ -494,14 +494,14 @@ export const imageCredits = [
   {
     "id": "credit-food-kyoto-yudofu",
     "file": "./images/food/kyoto-yudofu.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
     "title": "京都南禪寺名物清雅昆布湯豆腐",
-    "author": "Brooke Lark",
-    "sourceUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
+    "author": "Unsplash Contributor",
+    "sourceUrl": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "熱騰騰白玉豆腐浸潤於清香柴魚昆布湯頭"
+    "alt": "熱騰騰白玉豆腐浸潤於清香昆布高湯的京都湯豆腐料理"
   },
   {
     "id": "credit-food-kyoto-yatsuhashi",
@@ -542,14 +542,14 @@ export const imageCredits = [
   {
     "id": "credit-food-taipei-luroufan",
     "file": "./images/food/taipei-luroufan.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1789296719187-829d74cc7711?auto=format&fit=crop&w=900&q=80",
     "title": "台灣傳統冠軍古早味香蔥滷肉飯",
-    "author": "Mgg Vitchic",
-    "sourceUrl": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=900&q=80",
+    "author": "tommao wang",
+    "sourceUrl": "https://images.unsplash.com/photo-1789296719187-829d74cc7711?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "油亮晶瑩手切黑豬肉燥澆淋在香熱白米飯上"
+    "alt": "經典台灣滷肉飯碗鋪滿香濃手切滷肉、小黃瓜與醃黃蘿蔔"
   },
   {
     "id": "credit-food-taipei-mangoice",
@@ -590,26 +590,26 @@ export const imageCredits = [
   {
     "id": "credit-food-bangkok-tomyum",
     "file": "./images/food/bangkok-tomyum.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1548946526-f69e2424cf45?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1563372529-b35a5220919f?auto=format&fit=crop&w=900&q=80",
     "title": "泰式正宗冬蔭功濃郁酸辣海鮮湯",
-    "author": "Taylor Kiser",
-    "sourceUrl": "https://images.unsplash.com/photo-1548946526-f69e2424cf45?auto=format&fit=crop&w=900&q=80",
+    "author": "Unsplash Contributor",
+    "sourceUrl": "https://images.unsplash.com/photo-1563372529-b35a5220919f?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "以大蝦、檸檬草、南薑與椰奶熬製的辛香紅艷冬蔭功湯"
+    "alt": "以大蝦、檸檬草與辣油熬煮的紅艷濃郁正宗冬蔭功海鮮湯"
   },
   {
     "id": "credit-food-bangkok-roti",
     "file": "./images/food/bangkok-roti.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1575853121613-72ce1dd6979d?auto=format&fit=crop&w=900&q=80",
     "title": "泰國街頭現煎香蕉煉乳熱煎餅",
-    "author": "Eiliv Aceron",
-    "sourceUrl": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80",
+    "author": "Unsplash Contributor",
+    "sourceUrl": "https://images.unsplash.com/photo-1575853121613-72ce1dd6979d?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "外層金黃酥脆、內餡熱香甜軟的泰式香蕉煎餅"
+    "alt": "金黃熱煎香脆餅皮裹入新鮮香蕉切片並淋上香甜煉乳的泰式香蕉煎餅"
   },
   {
     "id": "credit-attr-taichung-rainbow",
@@ -626,14 +626,14 @@ export const imageCredits = [
   {
     "id": "credit-food-taichung-suncake",
     "file": "./images/food/taichung-suncake.jpg",
-    "imageUrl": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1782029680974-e07c93389f52?auto=format&fit=crop&w=900&q=80",
     "title": "台中百年名產酥皮麥芽餡太陽餅",
-    "author": "Anton Darius",
-    "sourceUrl": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+    "author": "Unsplash Contributor",
+    "sourceUrl": "https://images.unsplash.com/photo-1782029680974-e07c93389f52?auto=format&fit=crop&w=900&q=80",
     "sourceType": "免費商用圖庫 (Unsplash)",
     "license": "Unsplash License",
     "usagePermission": "verified",
-    "alt": "千層細緻酥皮包裹醇甜麥芽糖膏的道地台中太陽餅"
+    "alt": "層層酥皮金黃圓潤包裹香甜麥芽糖的道地傳統太陽餅"
   }
 ];
 
