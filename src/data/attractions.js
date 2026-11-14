@@ -31,7 +31,7 @@ export const attractions = [
     openingHours: "境內全天24小時開放參拜 (授與所 08:30 - 16:30)",
     address: "京都市伏見區深草藪之內町68",
     image: "./images/attractions/kyoto-fushimi.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1478436127897-769e00d0c715?auto=format&fit=crop&w=900&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-kyoto-fushimi"],
     sourceIds: ["source-kyoto-official", "source-kyoto-fushimi"]
   },
@@ -78,7 +78,7 @@ export const attractions = [
     openingHours: "10:00 - 21:00 (最後購票/入場 20:15)",
     address: "台北市信義區信義路五段7號",
     image: "./images/attractions/taipei-101.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1538356262335-51b68a735072?auto=format&fit=crop&w=900&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1572716402589-c1a2cf470502?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-taipei-101"],
     sourceIds: ["source-taipei-travel", "source-taipei-metro"]
   },
@@ -93,7 +93,7 @@ export const attractions = [
     openingHours: "週二至週日 09:00 - 17:00 (週一休館)",
     address: "台北市士林區至善路二段221號",
     image: "./images/attractions/taipei-palace.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/NationalPalace_MuseumFrontView.jpg/900px-NationalPalace_MuseumFrontView.jpg",
     imageCreditIds: ["credit-attr-taipei-palace"],
     sourceIds: ["source-taipei-travel", "source-npm-taiwan"]
   },
@@ -108,7 +108,7 @@ export const attractions = [
     openingHours: "全天24小時開放 (夜間步道有路燈照明)",
     address: "台北市信義區信義路五段150巷",
     image: "./images/attractions/taipei-elephant.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1470004914212-259bd0cfcbac?auto=format&fit=crop&w=900&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1470004914212-05527e49370b?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-taipei-elephant"],
     sourceIds: ["source-taipei-travel", "source-taipei-metro"]
   },
@@ -123,7 +123,7 @@ export const attractions = [
     openingHours: "16:00 - 24:00 全年無休 (各攤商略有不同)",
     address: "台北市士林區基河路101號周邊",
     image: "./images/attractions/taipei-shilin.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=900&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1513599974100-e724eabafef5?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-taipei-shilin"],
     sourceIds: ["source-taipei-travel", "source-taipei-metro"]
   },
@@ -170,7 +170,7 @@ export const attractions = [
     openingHours: "週六與週日 09:00 - 18:00 (週五下午有部分批發攤位)",
     address: "Kamphaeng Phet 2 Rd, Chatuchak, Bangkok",
     image: "./images/attractions/bangkok-chatuchak.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1696437492959-b9a8c37df4ad?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-bangkok-chatuchak"],
     sourceIds: ["source-tat-thailand", "source-bangkok-bts"]
   },
