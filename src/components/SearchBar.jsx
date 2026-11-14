@@ -32,7 +32,7 @@ export function SearchBar({
         <input
           type="text"
           className="search-input"
-          placeholder="搜尋城市名稱（例：京都、Taipei、曼谷）..."
+          placeholder="搜尋城市、知名景點或特色美食（例：台北、龍山寺、牛肉麵、自由女神）..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
           aria-label="搜尋目的地城市"

@@ -2,6 +2,8 @@ import React, { useState, useMemo } from 'react';
 import SearchBar from '../components/SearchBar';
 import DestinationCard from '../components/DestinationCard';
 import destinations from '../data/destinations';
+import attractions from '../data/attractions';
+import food from '../data/food';
 
 export function Explore() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -30,12 +32,33 @@ export function Explore() {
     const term = searchTerm.trim().toLowerCase();
 
     return destinations.filter((dest) => {
-      // 關鍵字比對：中文名、英文名、國家或介紹
+      // 判斷該目的地底下是否有符合關鍵字的景點
+      const matchAttraction = term && Array.isArray(dest.attractionIds) && attractions.some(
+        (a) =>
+          dest.attractionIds.includes(a.id) &&
+          (a.name.toLowerCase().includes(term) ||
+            a.englishName.toLowerCase().includes(term) ||
+            (a.category && a.category.toLowerCase().includes(term)) ||
+            (a.description && a.description.toLowerCase().includes(term)))
+      );
+
+      // 判斷該目的地底下是否有符合關鍵字的美食
+      const matchFood = term && Array.isArray(dest.foodIds) && food.some(
+        (f) =>
+          dest.foodIds.includes(f.id) &&
+          (f.name.toLowerCase().includes(term) ||
+            (f.category && f.category.toLowerCase().includes(term)) ||
+            (f.description && f.description.toLowerCase().includes(term)))
+      );
+
+      // 關鍵字比對：中文名、英文名、國家、介紹，或是該城市包含的知名景點與特色美食
       const matchKeyword = !term ||
         dest.name.toLowerCase().includes(term) ||
         dest.englishName.toLowerCase().includes(term) ||
         dest.country.toLowerCase().includes(term) ||
-        (dest.description && dest.description.toLowerCase().includes(term));
+        (dest.description && dest.description.toLowerCase().includes(term)) ||
+        matchAttraction ||
+        matchFood;
 
       // 國家篩選比對
       const matchCountry = selectedCountry === 'all' || dest.country === selectedCountry;

@@ -44,6 +44,9 @@ function register(id, title, url, localPath, sourceModule) {
 // 1. 登記 imageCredits
 imageCredits.forEach(c => {
   register(c.id, c.title, c.imageUrl, c.file, 'imageCredits.js');
+  if (c.sourceUrl && c.sourceUrl.startsWith('http')) {
+    register(`${c.id}-source`, `${c.title} 來源連結`, c.sourceUrl, null, 'imageCredits.js (sourceUrl)');
+  }
 });
 
 // 2. 登記 destinations
