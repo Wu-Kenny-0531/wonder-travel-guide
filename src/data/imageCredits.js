@@ -350,6 +350,92 @@ export const imageCredits = [
     license: "Unsplash License",
     usagePermission: "verified",
     alt: "盛裝滿滿水果、土鳳梨酥與花朵餅乾的手工冰淇淋杯"
+  },
+
+  // ================= 美國紐約 New York =================
+  {
+    id: "credit-dest-newyork",
+    file: "./images/destinations/newyork.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1200&q=80",
+    title: "紐約曼哈頓璀璨天際線與布魯克林大橋",
+    author: "Luca Bravo",
+    sourceUrl: "https://unsplash.com/photos/1496442226666",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "紐約下曼哈頓壯闊摩天大樓群與布魯克林大橋"
+  },
+  {
+    id: "credit-attr-newyork-liberty",
+    file: "./images/attractions/newyork-statue-of-liberty.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?auto=format&fit=crop&w=900&q=80",
+    title: "紐約港自由女神像火炬仰望景緻",
+    author: "Brandon Jacoby",
+    sourceUrl: "https://unsplash.com/photos/1605130284535",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "自由女神像右手高舉自由火炬的雄偉英姿"
+  },
+  {
+    id: "credit-attr-newyork-timessquare",
+    file: "./images/attractions/newyork-times-square.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?auto=format&fit=crop&w=900&q=80",
+    title: "時代廣場繁華霓虹看板與車水馬龍街景",
+    author: "Nicolai Berntsen",
+    sourceUrl: "https://unsplash.com/photos/1506146332389",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "時代廣場璀璨巨大的電子看板與穿梭的黃色計程車"
+  },
+  {
+    id: "credit-attr-newyork-centralpark",
+    file: "./images/attractions/newyork-central-park.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=900&q=80",
+    title: "曼哈頓中央公園蓊鬱綠意湖畔與摩天大樓群",
+    author: "Jermaine Ee",
+    sourceUrl: "https://unsplash.com/photos/1500916434205",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "中央公園湖畔倒映著周圍曼哈頓高聳的摩天大樓"
+  },
+  {
+    id: "credit-attr-newyork-empirestate",
+    file: "./images/attractions/newyork-empire-state.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1555109307-f7d9da25c244?auto=format&fit=crop&w=900&q=80",
+    title: "帝國大廈裝飾藝術尖頂與曼哈頓日暮全景",
+    author: "Kit Suman",
+    sourceUrl: "https://unsplash.com/photos/1555109307",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "暮色映照下壯麗雄偉的紐約帝國大廈"
+  },
+  {
+    id: "credit-food-newyork-pizza",
+    file: "./images/food/newyork-pizza.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80",
+    title: "紐約經典薄脆現烤切片披薩",
+    author: "Ivan Torres",
+    sourceUrl: "https://unsplash.com/photos/1513104890138",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "剛出爐拉絲起司與香脆餅皮的經典紐約切片披薩"
+  },
+  {
+    id: "credit-food-newyork-bagel",
+    file: "./images/food/newyork-bagel.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=900&q=80",
+    title: "紐約傳統手揉烘烤芝麻貝果佐特濃乳酪抹醬",
+    author: "Brett Jordan",
+    sourceUrl: "https://unsplash.com/photos/1584776296944",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "外脆內軟的手作紐約貝果搭配濃郁奶油乳酪"
   }
 ];
 

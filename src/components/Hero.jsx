@@ -40,11 +40,11 @@ export function Hero() {
 
             <div className="hero-stats">
               <div className="stat-item">
-                <span className="stat-number">4+</span>
+                <span className="stat-number">5+</span>
                 <span className="stat-label">精選熱門城市</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">16+</span>
+                <span className="stat-number">20+</span>
                 <span className="stat-label">必訪指標景點</span>
               </div>
               <div className="stat-item">

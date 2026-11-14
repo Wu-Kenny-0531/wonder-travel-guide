@@ -250,6 +250,68 @@ export const attractions = [
     imageUrl: "https://images.unsplash.com/photo-1552912810-e184f878293e?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-taichung-fengjia"],
     sourceIds: ["source-taichung-travel"]
+  },
+
+  // ================= 美國紐約 New York =================
+  {
+    id: "newyork-statue-of-liberty",
+    destinationId: "new-york",
+    name: "自由女神像與埃利斯島",
+    englishName: "Statue of Liberty & Ellis Island",
+    category: "文化歷史",
+    description: "坐落於紐約港自由島上，法國於1886年贈予美國慶祝獨立百年的世界文化遺產與民主象徵。女神右手高舉自由火炬、左手緊抱刻有1776年7月4日的獨立宣言法典。搭乘雕像遊船更可順訪載滿數百萬歐洲移民歷史記憶的埃利斯島移民博物館。",
+    highlights: ["聯合國教科文組織世界文化遺產", "搭乘Statue Cruises遊船親近紐約港全景", "登上基座觀景台或預約皇冠展望紐約天際線"],
+    openingHours: "09:00 - 17:00 (遊船首班約 08:30 出發，最後回程 17:00)",
+    address: "Liberty Island, New York, NY 10004",
+    image: "./images/attractions/newyork-statue-of-liberty.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-newyork-liberty"],
+    sourceIds: ["source-nyc-tourism", "source-nps-statue"]
+  },
+  {
+    id: "newyork-times-square",
+    destinationId: "new-york",
+    name: "時代廣場與百老匯劇院區",
+    englishName: "Times Square & Broadway",
+    category: "城市地標",
+    description: "被譽為「世界十字路口（Crossroads of the World）」的曼哈頓繁華核心地標。百老匯大道與第七大道交會處，環繞數十層樓高的巨型LED璀璨電子看板與紅色階梯。周邊匯聚全球頂尖百老匯音樂劇院、旗艦主題商店與24小時永不熄滅的城市脈動。",
+    highlights: ["紅色TKTS購票大階梯俯瞰璀璨霓虹全景", "世界頂級百老匯經典音樂劇現場朝聖", "跨年水晶球倒數發源聖地與街頭潮流活力"],
+    openingHours: "全天24小時開放自由參觀 (戶外街區燈火徹夜不熄)",
+    address: "Broadway & 7th Ave, New York, NY 10036",
+    image: "./images/attractions/newyork-times-square.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-newyork-timessquare"],
+    sourceIds: ["source-nyc-tourism"]
+  },
+  {
+    id: "newyork-central-park",
+    destinationId: "new-york",
+    name: "曼哈頓中央公園",
+    englishName: "Central Park",
+    category: "自然景觀",
+    description: "佔地達843英畝的曼哈頓綠洲，為世界都市公園的典範巨作。在水泥叢林摩天大樓的包圍中，鋪展出綿羊草原、弓橋（Bow Bridge）、貝塞斯達噴泉（Bethesda Terrace）與眺望台城堡。無論是悠閒野餐、湖上划船或漫步於林蔭林蔭大道，皆能感受紐約慢活優雅面貌。",
+    highlights: ["電影經典名場景「弓橋」與「貝塞斯達噴泉」", "綿羊草原與眺望台城堡俯瞰壯麗林冠", "四季分明景致：春櫻、夏綠、秋金紅楓、冬雪溜冰"],
+    openingHours: "每日 06:00 - 隔日 01:00 全年開放",
+    address: "Between 59th & 110th St, New York, NY 10022",
+    image: "./images/attractions/newyork-central-park.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-newyork-centralpark"],
+    sourceIds: ["source-nyc-tourism", "source-centralpark-nyc"]
+  },
+  {
+    id: "newyork-empire-state",
+    destinationId: "new-york",
+    name: "帝國大廈景觀台",
+    englishName: "Empire State Building",
+    category: "城市地標",
+    description: "樓高381公尺（含天線尖頂443公尺）的經典裝飾藝術（Art Deco）摩天大樓，長達40年蟬聯世界最高建築寶座。登上86樓露天露台與102樓室內觀景窗，能以360度極致全景將曼哈頓島、哈德遜河、布魯克林大橋甚至周邊六個州的遼闊地平線盡收眼底。",
+    highlights: ["世界最知名裝飾藝術摩天大樓地標建築", "86樓戶外360度露天觀景台感受曼哈頓高空震撼", "日落黃昏至入夜時分俯瞰無垠百萬紐約都會璀璨燈海"],
+    openingHours: "每日 09:00 - 24:00 (最後電梯上樓時間 23:15)",
+    address: "20 W 34th St., New York, NY 10001",
+    image: "./images/attractions/newyork-empire-state.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1555109307-f7d9da25c244?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-newyork-empirestate"],
+    sourceIds: ["source-nyc-tourism"]
   }
 ];
 

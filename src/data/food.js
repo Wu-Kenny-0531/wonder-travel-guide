@@ -122,6 +122,36 @@ export const food = [
     imageUrl: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-food-taichung-miyahara"],
     sourceIds: ["source-taichung-travel"]
+  },
+
+  // ================= 美國紐約 New York =================
+  {
+    id: "newyork-pizza",
+    destinationId: "new-york",
+    name: "紐約經典薄脆切片披薩",
+    englishName: "Classic New York-style Pizza Slice",
+    category: "在地料理",
+    description: "紐約最具象徵性的街頭靈魂美食。以手拋薄脆麵糰在超過400度高溫烤箱中烘烤，金黃微焦的酥脆外皮乘載濃郁蕃茄酸甜紅醬、厚厚融化的莫札瑞拉起司與義式辣香腸，折疊起來趁熱吃是紐約客的經典吃法。",
+    recommendedSpots: "Joe's Pizza（格林威治村本店）、Prince Street Pizza、Scarr's Pizza",
+    priceRange: "US$ 3.50 - US$ 5.50 / 片",
+    image: "./images/food/newyork-pizza.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-food-newyork-pizza"],
+    sourceIds: ["source-nyc-tourism"]
+  },
+  {
+    id: "newyork-bagel",
+    destinationId: "new-york",
+    name: "傳統手揉熱烤貝果佐厚乳酪抹醬",
+    englishName: "New York Hand-rolled Bagel with Lox & Schmear",
+    category: "飲品甜點",
+    description: "受惠於紐約獨特水質與傳統猶太慢速低溫發酵燙麵工藝，紐約貝果外皮金黃酥韌、內部紮實彈牙。切半微烤後塗抹厚厚一層香濃奶油乳酪（Cream Cheese），夾入煙燻鮭魚（Lox）、酸豆與紫洋蔥，為紐約早餐黃金標竿。",
+    recommendedSpots: "Ess-a-Bagel、Russ & Daughters、Kossar's Bagels",
+    priceRange: "US$ 5.00 - US$ 16.00",
+    image: "./images/food/newyork-bagel.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-food-newyork-bagel"],
+    sourceIds: ["source-nyc-tourism"]
   }
 ];
 

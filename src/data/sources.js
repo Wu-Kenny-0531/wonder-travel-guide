@@ -114,6 +114,32 @@ export const sources = [
     type: "政府觀光機關",
     accessedAt: "2026-11-14",
     notes: "高美濕地潮汐時間表、木棧道開放時間與生態保育規範。"
+  },
+
+  // 美國紐約 New York 來源
+  {
+    id: "source-nyc-tourism",
+    name: "NYC Tourism + Conventions 紐約市官方觀光局",
+    url: "https://www.nyctourism.com/",
+    type: "官方旅遊網站",
+    accessedAt: "2026-11-14",
+    notes: "紐約市五大行政區官方景點、當季展演活動、百老匯與地鐵交通導引。"
+  },
+  {
+    id: "source-nps-statue",
+    name: "美國國家公園管理局 自由女神像國家紀念區 (National Park Service - Statue of Liberty)",
+    url: "https://www.nps.gov/stli/",
+    type: "政府觀光機關",
+    accessedAt: "2026-11-14",
+    notes: "自由女神像參觀規定、愛麗絲島移民博物館渡輪營運與登冠安檢規定。"
+  },
+  {
+    id: "source-centralpark-nyc",
+    name: "中央公園保護協會官方網站 (Central Park Conservancy)",
+    url: "https://www.centralparknyc.org/",
+    type: "景點官方網站",
+    accessedAt: "2026-11-14",
+    notes: "中央公園綿延步道地圖、綿羊草原開放季節與各季特色導覽指南。"
   }
 ];
 

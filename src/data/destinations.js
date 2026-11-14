@@ -249,6 +249,69 @@ export const destinations = [
       "source-taichung-theater",
       "source-taichung-gaomei"
     ]
+  },
+  {
+    id: "new-york",
+    name: "紐約",
+    englishName: "New York",
+    country: "美國",
+    countryCode: "US",
+    description: "世界首屈一指的國際大都會「大蘋果（The Big Apple）」，匯聚全球金融、時尚、藝術、劇場與多元文化的頂尖殿堂。從漫步中央公園的四季綠意、登上自由女神像俯瞰紐約港，到時代廣場璀璨百老匯霓虹夜景，每一步都彷彿置身於經典電影場景中。",
+    slogan: "永不眠的夢想之都，全球文化與摩天大樓交織的極致舞台",
+    coverImage: "./images/destinations/newyork.jpg",
+    coverImageUrl: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1200&q=80",
+    tags: ["大都會", "世界地標", "百老匯", "博物館藝術", "街頭美食", "摩天大樓"],
+    travelTips: {
+      bestSeason: "秋季（9月至11月）涼爽宜人且中央公園楓紅如畫；春季（4月至6月）百花盛開；12月則有洛克菲勒聖誕樹與浪漫節慶氣氛。",
+      transitAdvice: "紐約地鐵（MTA Subway）24小時全年無休，支援 OMNY 非接觸式感應支付（直接刷信用卡或手機 Apple/Google Pay），每週自動計算搭乘上限。",
+      localEtiquette: "在餐廳內用餐、計程車與酒吧服務需支付約 18% - 22% 小費；尖峰時段在地鐵樓梯與電扶梯上請靠右站立、左側通行以維持動線通暢。"
+    },
+    itinerary: [
+      {
+        day: 1,
+        title: "自由之聲與下曼哈頓經典歷史尋蹤",
+        activities: [
+          "上午：從砲台公園（Battery Park）搭乘遊船登上自由島，近距離仰望壯麗的「自由女神像」並順道參觀埃利斯島移民博物館。",
+          "中午：漫步前往華爾街（Wall Street）與紐約證券交易所，摸摸著名的銅牛雕像祈求好運。",
+          "下午：走訪911國家紀念博物館沉思水池，傍晚漫步走過歷史悠久的「布魯克林大橋」，眺望曼哈頓絕美落日天際線。"
+        ]
+      },
+      {
+        day: 2,
+        title: "中城經典地標巡禮與時代廣場璀璨百老匯",
+        activities: [
+          "上午：登上擁有八十年歷史的「帝國大廈」86樓戶外觀景台，360度環視無邊際的曼哈頓水泥叢林震撼全景。",
+          "中午：在街邊人氣排隊名店外帶一片熱騰騰酥脆的「紐約經典切片披薩（NY Pizza Slice）」。",
+          "下午：造訪紐約公共圖書館主館（Rose Main Reading Room）與中央車站（Grand Central Terminal）欣賞星空圓頂。",
+          "晚間：走進璀璨無比的「時代廣場」，坐在紅色階梯欣賞巨型看板，並前往百老匯劇院朝聖經典音樂劇。"
+        ]
+      },
+      {
+        day: 3,
+        title: "中央公園漫活、大都會藝術饗宴與道地貝果",
+        activities: [
+          "上午：前往老牌貝果工坊享用「傳統手揉熱烤貝果佐厚奶油乳酪抹醬與煙燻鮭魚」。",
+          "上午至下午：漫步走進佔地遼闊的「中央公園」，走訪弓橋、綿羊草原與貝塞斯達噴泉。",
+          "下午：造訪世界三大博物館之一的大都會藝術博物館（The Met），沉浸於五千年世界藝術瑰寶。",
+          "傍晚：至第五大道漫步櫥窗購物，為精彩的紐約自由行畫下完美句點。"
+        ]
+      }
+    ],
+    attractionIds: [
+      "newyork-statue-of-liberty",
+      "newyork-times-square",
+      "newyork-central-park",
+      "newyork-empire-state"
+    ],
+    foodIds: [
+      "newyork-pizza",
+      "newyork-bagel"
+    ],
+    sourceIds: [
+      "source-nyc-tourism",
+      "source-nps-statue",
+      "source-centralpark-nyc"
+    ]
   }
 ];
 
