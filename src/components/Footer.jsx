@@ -24,7 +24,7 @@ export function Footer() {
               <li><Link to="/destination/kyoto">日本京都 Kyoto</Link></li>
               <li><Link to="/destination/taipei">台灣台北 Taipei</Link></li>
               <li><Link to="/destination/bangkok">泰國曼谷 Bangkok</Link></li>
-              <li><Link to="/explore">瀏覽所有城市 →</Link></li>
+              <li><Link to="/explore" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>瀏覽所有城市 →</Link></li>
             </ul>
           </div>
 

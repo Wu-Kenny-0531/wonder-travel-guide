@@ -9,10 +9,22 @@ import attractions from '../data/attractions';
 import food from '../data/food';
 
 export function Home() {
-  // 選取各城市的代表景點進行首頁焦點展示
-  const spotlightAttractions = attractions.slice(0, 3);
-  // 選取代表美食進行焦點展示
-  const spotlightFood = food.slice(0, 3);
+  // 首頁精選展示前 3 個熱門目的地，點擊按鈕可前往查看所有城市
+  const featuredDestinations = destinations.slice(0, 3);
+
+  // 首頁焦點景點展示 3 筆，點擊可前往探索頁瀏覽更多
+  const spotlightAttractions = [
+    attractions.find((a) => a.id === 'kyoto-kinkakuji'),
+    attractions.find((a) => a.id === 'taipei-101'),
+    attractions.find((a) => a.id === 'taichung-national-theater')
+  ].filter(Boolean);
+
+  // 首頁代表美食展示 3 筆，點擊下方按鈕可瀏覽更多城市在地美食
+  const spotlightFood = [
+    food.find((f) => f.id === 'kyoto-matcha'),
+    food.find((f) => f.id === 'taipei-beef-noodles'),
+    food.find((f) => f.id === 'taichung-bubble-tea')
+  ].filter(Boolean);
 
   return (
     <div className="home-page">
@@ -74,14 +86,14 @@ export function Home() {
           </div>
 
           <div className="destination-grid">
-            {destinations.map((dest) => (
+            {featuredDestinations.map((dest) => (
               <DestinationCard key={dest.id} destination={dest} />
             ))}
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
             <Link to="/explore" className="btn btn-primary" style={{ padding: '12px 32px', fontSize: '1.05rem' }}>
-              探索全部目的地與特色篩選
+              探索全部目的地（共 {destinations.length} 座精彩城市）
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
@@ -107,6 +119,12 @@ export function Home() {
               <AttractionCard key={attr.id} attraction={attr} />
             ))}
           </div>
+
+          <div style={{ textAlign: 'center', marginTop: '36px' }}>
+            <Link to="/explore" className="btn btn-outline" style={{ padding: '10px 28px' }}>
+              探索更多精選景點 ➜
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -125,6 +143,12 @@ export function Home() {
             {spotlightFood.map((item) => (
               <FoodCard key={item.id} foodItem={item} />
             ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '36px' }}>
+            <Link to="/explore" className="btn btn-outline" style={{ padding: '10px 28px' }}>
+              探索更多在地美食 ➜
+            </Link>
           </div>
         </div>
       </section>

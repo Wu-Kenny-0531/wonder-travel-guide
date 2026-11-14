@@ -1444,7 +1444,7 @@
                   <li><a href="#/destination/kyoto">日本京都 Kyoto</a></li>
                   <li><a href="#/destination/taipei">台灣台北 Taipei</a></li>
                   <li><a href="#/destination/bangkok">泰國曼谷 Bangkok</a></li>
-                  <li><a href="#/explore">瀏覽所有城市 →</a></li>
+                  <li><a href="#/explore" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>瀏覽所有城市 →</a></li>
                 </ul>
               </div>
 
@@ -1606,7 +1606,7 @@
                     <span className="highlight">出發，遇見不一樣的風景！</span>
                   </h1>
                   <p className="hero-description">
-                    <strong>GoWonder Travel Guide</strong> 結合活潑明亮的旅遊雜誌風格與嚴謹查證的官方資訊。無論是古都京都的禪風古寺、台北夜市的熱騰鑊氣，還是曼谷湄南河畔的金碧佛塔，帶你輕鬆收藏專屬的旅行地圖。
+                    <strong>GoWonder Travel Guide</strong> 結合活潑明亮的旅遊雜誌風格與嚴謹查證的官方資訊。無論是古都京都的禪風古寺、台北夜市的熱騰鑊氣、曼谷湄南河畔的金碧佛塔，還是台中歌劇院與文創聚落的慢活藝術，帶你輕鬆收藏專屬的旅行地圖。
                   </p>
                   <div className="hero-actions">
                     <a href="#/explore" className="btn btn-primary">
@@ -1617,8 +1617,8 @@
                     </a>
                   </div>
                   <div className="hero-stats">
-                    <div className="stat-item"><span className="stat-number">3+</span><span className="stat-label">首波熱門城市</span></div>
-                    <div className="stat-item"><span className="stat-number">12+</span><span className="stat-label">精選必訪景點</span></div>
+                    <div className="stat-item"><span className="stat-number">4+</span><span className="stat-label">精選熱門城市</span></div>
+                    <div className="stat-item"><span className="stat-number">16+</span><span className="stat-label">必訪指標景點</span></div>
                     <div className="stat-item"><span className="stat-number">100%</span><span className="stat-label">官方嚴謹查證</span></div>
                   </div>
                 </div>
@@ -1677,7 +1677,7 @@
                 <p>精心挑選亞洲最具特色之自由行勝地，沉浸於古都文化、繁華都會與南洋風情。</p>
               </div>
               <div className="destination-grid">
-                {destinations.map(d => (
+                {destinations.slice(0, 3).map(d => (
                   <DestinationCard
                     key={d.id}
                     destination={d}
@@ -1685,6 +1685,11 @@
                     onToggleFav={favHook.toggleDestinationFavorite}
                   />
                 ))}
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '36px' }}>
+                <a href="#/explore" className="btn btn-primary" style={{ padding: '12px 32px', fontSize: '1.05rem' }}>
+                  探索全部目的地（共 {destinations.length} 座精彩城市） ➜
+                </a>
               </div>
             </div>
           </section>
@@ -1698,7 +1703,11 @@
                 <p>親身走進世界文化遺產與壯麗自然風光，隨時點擊愛心收藏進您的旅行口袋名單。</p>
               </div>
               <div className="attraction-grid">
-                {attractions.slice(0, 3).map(a => (
+                {[
+                  attractions.find(a => a.id === 'kyoto-kinkakuji'),
+                  attractions.find(a => a.id === 'taipei-101'),
+                  attractions.find(a => a.id === 'taichung-national-theater')
+                ].filter(Boolean).map(a => (
                   <AttractionCard
                     key={a.id}
                     attraction={a}
@@ -1706,6 +1715,11 @@
                     onToggleFav={favHook.toggleAttractionFavorite}
                   />
                 ))}
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '36px' }}>
+                <a href="#/explore" className="btn btn-outline" style={{ padding: '10px 28px' }}>
+                  探索更多精彩名勝 ➜
+                </a>
               </div>
             </div>
           </section>
@@ -1719,9 +1733,18 @@
                 <p>舌尖上的文化巡禮，品嚐每一座城市最道地、最具代表性的美味靈魂。</p>
               </div>
               <div className="food-grid">
-                {food.slice(0, 3).map(f => (
+                {[
+                  food.find(f => f.id === 'kyoto-matcha'),
+                  food.find(f => f.id === 'taipei-beef-noodles'),
+                  food.find(f => f.id === 'taichung-bubble-tea')
+                ].filter(Boolean).map(f => (
                   <FoodCard key={f.id} foodItem={f} />
                 ))}
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '36px' }}>
+                <a href="#/explore" className="btn btn-outline" style={{ padding: '10px 28px' }}>
+                  探索更多在地美食 ➜
+                </a>
               </div>
             </div>
           </section>
@@ -1910,10 +1933,13 @@
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
                 <h2 className="detail-section-title" style={{ margin: 0 }}><span className="section-icon">🏯</span>必訪名勝景點 ({destAttrs.length})</h2>
                 <div className="filter-pills">
-                  <button className={"filter-pill " + (category === 'all' ? 'active' : '')} onClick={() => setCategory('all')}>全部分類</button>
-                  {categories.map(c => (
-                    <button key={c} className={"filter-pill " + (category === c ? 'active' : '')} onClick={() => setCategory(c)}>{c}</button>
-                  ))}
+                  <button className={"filter-pill " + (category === 'all' ? 'active' : '')} onClick={() => setCategory('all')}>全部分類 ({destAttrs.length})</button>
+                  {categories.map(c => {
+                    const cnt = destAttrs.filter(a => a.category === c).length;
+                    return (
+                      <button key={c} className={"filter-pill " + (category === c ? 'active' : '')} onClick={() => setCategory(c)}>{c} ({cnt})</button>
+                    );
+                  })}
                 </div>
               </div>
               <div className="attraction-grid">
@@ -2095,7 +2121,7 @@
                 <tbody>
                   {imageCredits.map(c => (
                     <tr key={c.id}>
-                      <td><img referrerPolicy="no-referrer" src={c.imageUrl || c.file} alt={c.title} className="credit-thumb" /></td>
+                      <td><img referrerPolicy="no-referrer" src={c.imageUrl || c.file} alt={c.title} className="credit-thumb" onError={(e) => { e.currentTarget.src = "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2280%22%20height%3D%2260%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23FFD166%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20fill%3D%22%2323272F%22%20font-size%3D%2212%22%20font-family%3D%22sans-serif%22%3EPhoto%3C%2Ftext%3E%3C%2Fsvg%3E"; }} /></td>
                       <td><strong>{c.title}</strong><div style={{ fontSize: '0.75rem', color: '#718096' }}>ID: {c.id}</div></td>
                       <td><span style={{ color: 'var(--color-primary)', fontWeight: 600 }}>{c.author}</span></td>
                       <td>{c.sourceType}</td>

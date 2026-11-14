@@ -19,7 +19,7 @@ export function Hero() {
             </h1>
 
             <p className="hero-description">
-              <strong>GoWonder Travel Guide</strong> 結合活潑明亮的旅遊雜誌風格與嚴謹查證的官方資訊。無論是古都京都的禪風古寺、台北夜市的熱騰鑊氣，還是曼谷湄南河畔的金碧佛塔，帶你輕鬆收藏專屬的旅行地圖。
+              <strong>GoWonder Travel Guide</strong> 結合活潑明亮的旅遊雜誌風格與嚴謹查證的官方資訊。無論是古都京都的禪風古寺、台北夜市的熱騰鑊氣、曼谷湄南河畔的金碧佛塔，還是台中歌劇院與文創眷村的慢活藝術，帶你輕鬆收藏專屬的旅行地圖。
             </p>
 
             <div className="hero-actions">
@@ -40,12 +40,12 @@ export function Hero() {
 
             <div className="hero-stats">
               <div className="stat-item">
-                <span className="stat-number">3+</span>
-                <span className="stat-label">首波熱門城市</span>
+                <span className="stat-number">4+</span>
+                <span className="stat-label">精選熱門城市</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">12+</span>
-                <span className="stat-label">精選必訪景點</span>
+                <span className="stat-number">16+</span>
+                <span className="stat-label">必訪指標景點</span>
               </div>
               <div className="stat-item">
                 <span className="stat-number">100%</span>

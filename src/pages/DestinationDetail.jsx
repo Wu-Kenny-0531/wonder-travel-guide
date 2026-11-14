@@ -80,6 +80,7 @@ export function DestinationDetail() {
           src={coverUrl}
           alt={`${destination.name} ${destination.englishName} 城市主視覺`}
           className="detail-hero-bg"
+          referrerPolicy="no-referrer"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
           }}
@@ -221,17 +222,20 @@ export function DestinationDetail() {
                   className={`filter-pill ${activeAttractionCategory === 'all' ? 'active' : ''}`}
                   onClick={() => setActiveAttractionCategory('all')}
                 >
-                  全部分類
+                  全部分類 ({destinationAttractions.length})
                 </button>
-                {attractionCategories.map((cat) => (
-                  <button
-                    key={cat}
-                    className={`filter-pill ${activeAttractionCategory === cat ? 'active' : ''}`}
-                    onClick={() => setActiveAttractionCategory(cat)}
-                  >
-                    {cat}
-                  </button>
-                ))}
+                {attractionCategories.map((cat) => {
+                  const count = destinationAttractions.filter((a) => a.category === cat).length;
+                  return (
+                    <button
+                      key={cat}
+                      className={`filter-pill ${activeAttractionCategory === cat ? 'active' : ''}`}
+                      onClick={() => setActiveAttractionCategory(cat)}
+                    >
+                      {cat} ({count})
+                    </button>
+                  );
+                })}
               </div>
             )}
           </div>
