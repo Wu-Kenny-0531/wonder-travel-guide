@@ -188,6 +188,67 @@ export const destinations = [
       "source-bangkok-grand-palace",
       "source-bangkok-bts"
     ]
+  },
+  {
+    id: "taichung",
+    name: "台中",
+    englishName: "Taichung",
+    country: "台灣",
+    countryCode: "TW",
+    slogan: "徜徉藝文綠意街廓與夕陽濕地，品味珍珠奶茶發源地的無限創意",
+    description: "台中位於台灣中部，是一座融合當代建築美學、深厚人文藝術與豐富在地美食的宜居城市。由世界級建築大師伊東豊雄設計的臺中國家歌劇院展現前衛曲牆工藝，高美濕地的夕陽木棧道被譽為台灣最美日落勝景；漫步在草悟道與審計新村文創聚落，或走進宮原眼科品嚐創意冰淇淋、在逢甲夜市探索台灣街頭小吃，感受這座充滿活力的創意之都。",
+    coverImage: "./images/destinations/taichung.jpg",
+    coverImageUrl: "https://images.unsplash.com/photo-1767583713036-87e533ae3b44?auto=format&fit=crop&w=1200&q=80",
+    tags: ["藝文建築", "濕地夕陽", "珍奶發源", "文創聚落", "觀光夜市"],
+    travelTips: {
+      bestSeason: "10月至翌年4月，秋冬氣候涼爽穩定且降雨量少，是探索戶外與濕地夕陽的最佳時機。",
+      transitAdvice: "台中捷運綠線串聯高鐵台中站與市區；市區公車享有「市民專屬 10 公里免費」乘車優惠，亦可善用 YouBike 2.0 穿梭草悟道與街區巷弄。",
+      localEtiquette: "造訪高美濕地時請務必沿著木棧道行走，切勿踩踏核心保育區灘地以保護雲林莞草與彈塗魚招潮蟹生態；歌劇院室內請降低交談音量。"
+    },
+    itinerary: [
+      {
+        day: 1,
+        title: "藝文建築與草悟道文創散策",
+        activities: [
+          "上午：搭乘捷運造訪世界建築奇蹟「臺中國家歌劇院」，參觀美聲涵洞曲牆與六樓空中花園。",
+          "下午：漫步草悟道綠園道與「審計新村文創聚落」，品嚐文青手沖咖啡與選購手作飾品。",
+          "晚間：前往全台最大規模之「逢甲觀光夜市」，大啖大腸包小腸、明倫蛋餅與地瓜球小吃。"
+        ]
+      },
+      {
+        day: 2,
+        title: "海線自然奇景與歷史老宅巡禮",
+        activities: [
+          "上午：探訪彩虹眷村欣賞色彩斑斕童趣壁畫，感受老眷村轉型的繽紛藝術能量。",
+          "下午：啟程前往清水「高美野生動物保護區」，漫步800公尺木棧道飽覽金色夕陽與風車景致。",
+          "晚間：返回市區造訪火車站旁「宮原眼科」，在挑高巴洛克老宅品嚐手工多球冰淇淋聖代。"
+        ]
+      },
+      {
+        day: 3,
+        title: "珍奶創始店與歷史中區舊城巡禮",
+        activities: [
+          "上午：前往台中中區第二市場享用古早味菜頭粿、老賴紅茶與正宗麻糬美食。",
+          "下午：走訪春水堂四維創始店，親嚐一杯手搖「黑糖珍珠鮮奶茶」感受發源地的經典茶韻。",
+          "傍晚：沿著綠川與柳川水岸水質改善步道散步，享受舊城區慢活恬靜之美。"
+        ]
+      }
+    ],
+    attractionIds: [
+      "taichung-national-theater",
+      "taichung-gaomei-wetland",
+      "taichung-shenji-village",
+      "taichung-fengjia-night-market"
+    ],
+    foodIds: [
+      "taichung-bubble-tea",
+      "taichung-miyahara-icecream"
+    ],
+    sourceIds: [
+      "source-taichung-travel",
+      "source-taichung-theater",
+      "source-taichung-gaomei"
+    ]
   }
 ];
 

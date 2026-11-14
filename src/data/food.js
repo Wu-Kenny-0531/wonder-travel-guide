@@ -92,6 +92,36 @@ export const food = [
     imageUrl: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-food-bangkok-mangorice"],
     sourceIds: ["source-tat-thailand"]
+  },
+
+  // ================= 台灣台中 Taichung =================
+  {
+    id: "taichung-bubble-tea",
+    destinationId: "taichung",
+    name: "台中發源原創珍珠奶茶",
+    englishName: "Original Taiwanese Bubble Milk Tea",
+    category: "飲品甜點",
+    description: "台中為全球手搖飲傳奇「珍珠奶茶」的誕生發源聖地。以特選錫蘭紅茶慢火熬出濃厚茶韻，加入香醇鮮奶與焦糖黑糖慢熬、軟糯Q彈有嚼勁的手工粉圓，甜潤順口是風靡全世界的台灣之光。",
+    recommendedSpots: "春水堂創始店（四維街）、茶明載波、吃茶三千",
+    priceRange: "NT$ 65 - NT$ 130",
+    image: "./images/food/taichung-bubbletea.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-food-taichung-bubbletea"],
+    sourceIds: ["source-taichung-travel"]
+  },
+  {
+    id: "taichung-miyahara-icecream",
+    destinationId: "taichung",
+    name: "宮原眼科手作天然冰淇淋與土鳳梨酥",
+    englishName: "Miyahara Artisanal Ice Cream & Pastries",
+    category: "甜點",
+    description: "座落於台中火車站旁日治時期眼科醫院紅磚老建築，由日出團隊打造成宛如霍格華茲魔法學院般的挑高巴洛克圖書館空間。提供多達六十餘種風味的手工純天然冰淇淋，搭配整塊經典土鳳梨酥與乳酪蛋糕作為華麗配料。",
+    recommendedSpots: "宮原眼科本店（中山路20號）、第四信用合作社",
+    priceRange: "NT$ 180 - NT$ 320",
+    image: "./images/food/taichung-miyahara.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-food-taichung-miyahara"],
+    sourceIds: ["source-taichung-travel"]
   }
 ];
 

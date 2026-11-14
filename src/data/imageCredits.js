@@ -264,6 +264,92 @@ export const imageCredits = [
     license: "Unsplash License",
     usagePermission: "verified",
     alt: "新鮮金黃芒果切片搭配淋上濃稠椰漿的糯米飯"
+  },
+
+  // ================= 台中目的地與景點美食 (Taichung) =================
+  {
+    id: "credit-dest-taichung",
+    file: "./images/destinations/taichung.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1767583713036-87e533ae3b44?auto=format&fit=crop&w=1200&q=80",
+    title: "臺中國家歌劇院與現代七期都會街景",
+    author: "Ricky T",
+    sourceUrl: "https://unsplash.com/photos/1767583713036",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "臺中國家歌劇院流線型前衛建築外觀"
+  },
+  {
+    id: "credit-attr-taichung-theater",
+    file: "./images/attractions/taichung-theater.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1767583713036-87e533ae3b44?auto=format&fit=crop&w=900&q=80",
+    title: "臺中國家歌劇院曲牆建築美學",
+    author: "Ricky T",
+    sourceUrl: "https://unsplash.com/photos/1767583713036",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "國家歌劇院壺中居與美聲涵洞前衛結構"
+  },
+  {
+    id: "credit-attr-taichung-gaomei",
+    file: "./images/attractions/taichung-gaomei.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    title: "高美濕地夕陽餘暉與海天一色",
+    author: "Sean Oulashin",
+    sourceUrl: "https://unsplash.com/photos/1507525428034",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "夕陽西下染紅的濕地水岸與金色倒影"
+  },
+  {
+    id: "credit-attr-taichung-shenji",
+    file: "./images/attractions/taichung-shenji.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80",
+    title: "審計新村文創聚落手工藝與綠意老眷舍",
+    author: "Prudence Earl",
+    sourceUrl: "https://unsplash.com/photos/1513519245088",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "老宿舍改建的文創手作市集與植栽街角"
+  },
+  {
+    id: "credit-attr-taichung-fengjia",
+    file: "./images/attractions/taichung-fengjia.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1552912810-e184f878293e?auto=format&fit=crop&w=900&q=80",
+    title: "逢甲夜市熱鬧街頭美食與璀璨燈火",
+    author: "Even Liu",
+    sourceUrl: "https://unsplash.com/photos/1552912810",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "逢甲商圈人潮絡繹不絕的夜市攤商街道"
+  },
+  {
+    id: "credit-food-taichung-bubbletea",
+    file: "./images/food/taichung-bubbletea.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=900&q=80",
+    title: "台中發源經典黑糖珍珠鮮奶茶",
+    author: "Rosalind Chang",
+    sourceUrl: "https://unsplash.com/photos/1525385133512",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "濃郁黑糖珍珠與香醇鮮奶調製的台灣經典珍奶"
+  },
+  {
+    id: "credit-food-taichung-miyahara",
+    file: "./images/food/taichung-miyahara.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=900&q=80",
+    title: "宮原眼科老宅手工多球冰淇淋聖代",
+    author: "Lama Roshi",
+    sourceUrl: "https://unsplash.com/photos/1501443762994",
+    sourceType: "免費商用圖庫 (Unsplash)",
+    license: "Unsplash License",
+    usagePermission: "verified",
+    alt: "盛裝滿滿水果、土鳳梨酥與花朵餅乾的手工冰淇淋杯"
   }
 ];
 

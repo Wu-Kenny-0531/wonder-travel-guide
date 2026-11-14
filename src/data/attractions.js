@@ -188,6 +188,68 @@ export const attractions = [
     imageUrl: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=900&q=80",
     imageCreditIds: ["credit-attr-bangkok-river"],
     sourceIds: ["source-tat-thailand", "source-bangkok-bts"]
+  },
+
+  // ================= 台灣台中 Taichung =================
+  {
+    id: "taichung-national-theater",
+    destinationId: "taichung",
+    name: "臺中國家歌劇院",
+    englishName: "National Taichung Theater",
+    category: "城市地標",
+    description: "由普立茲克建築獎得主伊東豊雄設計，被譽為「世界第九大新建築奇蹟」。建築以世界首創無樑柱、純粹「美聲涵洞（Sound Cave）」曲牆工藝打造，頂樓擁有開闊的空中花園與戶外水景，展現極致當代前衛建築美學。",
+    highlights: ["伊東豊雄世界首創無樑柱曲牆結構", "六樓戶外空中花園眺望都會天際線", "文創書店與戶外噴水池夜間光影秀"],
+    openingHours: "週日至週四 11:30 - 21:00，週五至週六 11:30 - 22:00 (週一休館)",
+    address: "台中市西屯區惠來路二段101號",
+    image: "./images/attractions/taichung-theater.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1767583713036-87e533ae3b44?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-taichung-theater"],
+    sourceIds: ["source-taichung-travel", "source-taichung-theater"]
+  },
+  {
+    id: "taichung-gaomei-wetland",
+    destinationId: "taichung",
+    name: "高美野生動物保護區（高美濕地）",
+    englishName: "Gaomei Wetland",
+    category: "自然景觀",
+    description: "位於清水大甲溪出海口南側，擁有廣達1,500公頃的泥質與沙質灘地，名列台灣最美夕陽觀賞勝地。沿著800公尺長的木棧道延伸至潮間帶深處，遠方18座白色風力發電機佇立海岸，退潮時水面如鏡倒映彩霞，宛如台版天空之鏡。",
+    highlights: ["長達800公尺延伸入海的生態木棧道", "退潮時如夢似幻之金色天空之鏡夕陽", "近距離觀察彈塗魚、萬歲大眼蟹與候鳥生態"],
+    openingHours: "木棧道開放時間依每日潮汐調整（退潮前後1.5至2小時開放，滿潮期間暫時關閉）",
+    address: "台中市清水區美堤街周邊",
+    image: "./images/attractions/taichung-gaomei.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-taichung-gaomei"],
+    sourceIds: ["source-taichung-travel", "source-taichung-gaomei"]
+  },
+  {
+    id: "taichung-shenji-village",
+    destinationId: "taichung",
+    name: "審計新村文創聚落",
+    englishName: "Shenji New Village (Audit Village)",
+    category: "市集購物",
+    description: "前身為台灣省政府審計處的員工老宿舍群，歷經半世紀滄桑後透過青年創業計畫活化為台中最具代表性的獨立設計基地。兩層樓鵝黃色木造眷舍林立著風格咖啡廳、手工皮件、陶藝工坊與甜點工作室，週末時暮暮市集更是人潮絡繹不絕。",
+    highlights: ["老派復古鵝黃色兩層樓宿舍建築群", "週末「暮暮市集」手作甜點與原創文創小物", "旅人必訪特色手沖咖啡廳與義式泡芙"],
+    openingHours: "各店家多為 11:00 - 19:00 (戶外街區全天開放散步)",
+    address: "台中市西區民生路368巷",
+    image: "./images/attractions/taichung-shenji.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-taichung-shenji"],
+    sourceIds: ["source-taichung-travel"]
+  },
+  {
+    id: "taichung-fengjia-night-market",
+    destinationId: "taichung",
+    name: "逢甲觀光夜市",
+    englishName: "Fengjia Night Market",
+    category: "夜市商圈",
+    description: "緊鄰逢甲大學校園，是全台灣規模最大、創新小吃競爭最激烈的超級夜市王國。台灣許多風靡全台的夜市小吃（如明倫蛋餅、大腸包小腸、一心素食臭豆腐、地瓜球、章魚小丸子）皆發源於此，更是引領潮流服飾與潮流鞋款的購物熱區。",
+    highlights: ["台灣創新街頭小吃最高搖籃與試驗地", "官芝霖大腸包小腸與明倫古早味蛋餅", "文華路與逢甲路綿延上千攤超澎湃規模"],
+    openingHours: "16:00 - 01:00 全年無休 (各攤商營業時間略有不同)",
+    address: "台中市西屯區文華路、福星路周邊",
+    image: "./images/attractions/taichung-fengjia.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1552912810-e184f878293e?auto=format&fit=crop&w=900&q=80",
+    imageCreditIds: ["credit-attr-taichung-fengjia"],
+    sourceIds: ["source-taichung-travel"]
   }
 ];
 

@@ -88,6 +88,32 @@ export const sources = [
     type: "官方交通網站",
     accessedAt: "2026-11-14",
     notes: "BTS 輕軌系統路線、悠遊兔卡票價及恰圖恰週末市集站點說明。"
+  },
+
+  // 台灣台中 Taichung 來源
+  {
+    id: "source-taichung-travel",
+    name: "大玩台中 臺中觀光旅遊網 (Taichung Tourism - 臺中市政府觀光旅遊局)",
+    url: "https://travel.taichung.gov.tw/",
+    type: "官方旅遊網站",
+    accessedAt: "2026-11-14",
+    notes: "臺中市政府官方旅遊景點、審計新村文創聚落與逢甲夜市旅遊指引。"
+  },
+  {
+    id: "source-taichung-theater",
+    name: "臺中國家歌劇院官方網站 (National Taichung Theater)",
+    url: "https://www.npac-ntt.org/",
+    type: "景點官方網站",
+    accessedAt: "2026-11-14",
+    notes: "伊東豊雄曲牆美學建築、開館時間與參觀預約導覽指南。"
+  },
+  {
+    id: "source-taichung-gaomei",
+    name: "高美野生動物保護區生態網 (Gaomei Wetland - 臺中市政府農業局)",
+    url: "https://www.gaomei.com.tw/",
+    type: "政府觀光機關",
+    accessedAt: "2026-11-14",
+    notes: "高美濕地潮汐時間表、木棧道開放時間與生態保育規範。"
   }
 ];
 
