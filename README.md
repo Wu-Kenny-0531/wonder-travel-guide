@@ -119,6 +119,13 @@ npm run build
 npm run preview
 ```
 
+### 5. 一鍵圖片健康檢測 (Image Health Check)
+
+```bash
+npm run check:images
+```
+自動對全站所有景點、美食與城市封面圖片進行真實 HTTP 連線測試，確認全數 200 OK，無 403 防盜鏈阻擋或 404 死鏈。
+
 ---
 
 ## 🗺️ 初始內建目的地資料
